@@ -4,15 +4,11 @@ import { Poppins } from "next/font/google";
 import AddXpHeader from "../Components/Navigations/AddXpHeader";
 import AddXpFooter from "../Components/Navigations/AddXpFooter";
 import "bootstrap/dist/css/bootstrap.min.css";
-import strapi from "../Configurations/Config.json";
+
 import "../assets/src/scss/main.scss";
 // import "../assets/src/Lib/app.js";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import axios, { AxiosRequestConfig } from "axios";
-import { SEO } from "../Configurations/SEOQuery.js";
-import Head from "next/head";
-import SEOData from "@/Components/SEO/SEOData";
+
 import { Helmet } from "react-helmet";
 
 const poppins = Poppins({
@@ -26,7 +22,11 @@ export const metadata: Metadata = {
   description: "Digital Customer Experience Management Solution",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
   let bodyclass = "";
   if (
@@ -43,33 +43,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   ) {
     bodyclass = "hire-resource";
   }
-  if (pathname == "/commerce-experience" || pathname == "/content-experience" || pathname == "/user-experience") {
+  if (
+    pathname == "/commerce-experience" ||
+    pathname == "/content-experience" ||
+    pathname == "/user-experience"
+  ) {
     bodyclass = "bg-dark";
   }
   // } else {
   //   bodyclass = "";
   // }
-  const [userDetails, setUserDetails] = useState<UserData>();
-  const config: AxiosRequestConfig = {
-    method: "POST",
-    url: strapi.strapigraphql,
 
-    data: {
-      query: SEO("aboutUs"),
-    },
-  };
-  async function fetchdata() {
-    try {
-      const response = await axios(config);
-      setUserDetails(response.data.data.aboutUs);
-    } catch (err) {
-      console.log("ERROR DURING AXIOS REQUEST", err);
-    } finally {
-    }
-  }
-  useEffect(() => {
-    fetchdata();
-  }, []);
   const gtmContainerId = `(function(w,d,s,l,i) {
     w[l]=w[l]||[]; w[l].push({
       'gtm.start':
@@ -79,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         'https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-NM9VSWDF');`;
   return (
-    <html lang='en' className={`${poppins.variable}`}>
+    <html lang="en" className={`${poppins.variable}`}>
       <Helmet defer={false}>
         <script>{gtmContainerId}</script>
       </Helmet>
@@ -87,7 +71,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AddXpHeader />
         {children}
         <AddXpFooter />
-        <script async src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'></script>
+        <script
+          async
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        ></script>
         {/* <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js'> </script>
 
