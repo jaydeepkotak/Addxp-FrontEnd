@@ -494,8 +494,8 @@ header nav {
         font-size: 14px;
       }
       &.show {
-       color: $white;
-     }
+        color: $white;
+      }
       @media (max-width: $tablet-breakpoint1) {
         color: $black;
         font-size: 40px;
@@ -1295,6 +1295,7 @@ header nav {
     width: 52px;
     position: relative;
     display: inline-block;
+    cursor: pointer;
 
     @media (max-width: $mobile-breakpoint) {
       margin-left: 0;

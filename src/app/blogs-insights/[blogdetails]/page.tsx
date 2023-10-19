@@ -249,7 +249,7 @@ function SlugPage() {
                   {item.attributes.Similar_blog.data.map((similar: any) => (
                     <div className="col-md-6" key={similar.id}>
                       <div className="latest-box">
-                        <a href="kentico-version-history-and-features">
+                        <Link href={similar.attributes.Blogs.Links.href}>
                           <figure>
                             <img
                               src={
@@ -279,7 +279,7 @@ function SlugPage() {
                               <li>{similar.attributes.Blogs.Creator}</li>
                             </ul>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   ))}

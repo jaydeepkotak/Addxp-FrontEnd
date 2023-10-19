@@ -181,6 +181,7 @@
       display: inline-block;
       margin-bottom: 20px;
       margin-right: 0;
+      cursor: pointer;
       @media (max-width: $mobile-breakpoint) {
         width: 100%;
       }

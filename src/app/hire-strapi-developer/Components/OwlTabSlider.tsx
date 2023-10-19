@@ -65,60 +65,52 @@ function OwlTabSlider() {
               animateOut="fadeOut"
             >
               <div className={`item`} onClick={(e) => handleCurrentClass(e, 0)}>
-                <a href="javascript:void(0);" className="tab-owl-button active">
+                <span className="tab-owl-button active">
                   Strapi Development
-                </a>
+                </span>
               </div>
 
               <div className={`item`} onClick={(e) => handleCurrentClass(e, 1)}>
-                <a href="javascript:void(0);" className="tab-owl-button">
+                <span className="tab-owl-button">
                   Strapi Plugin Development
-                </a>
+                </span>
               </div>
 
               <div
                 className={`item `}
                 onClick={(e) => handleCurrentClass(e, 2)}
               >
-                <a href="javascript:void(0);" className="tab-owl-button">
-                  Strapi Upgrade
-                </a>
+                <span className="tab-owl-button">Strapi Upgrade</span>
               </div>
 
               <div
                 className={`item `}
                 onClick={(e) => handleCurrentClass(e, 3)}
               >
-                <a href="javascript:void(0);" className="tab-owl-button">
-                  Strapi Migration
-                </a>
+                <span className="tab-owl-button">Strapi Migration</span>
               </div>
 
               <div
                 className={`item `}
                 onClick={(e) => handleCurrentClass(e, 4)}
               >
-                <a href="javascript:void(0);" className="tab-owl-button">
-                  Strapi Consultation
-                </a>
+                <span className="tab-owl-button">Strapi Consultation</span>
               </div>
 
               <div
                 className={`item `}
                 onClick={(e) => handleCurrentClass(e, 5)}
               >
-                <a href="javascript:void(0);" className="tab-owl-button">
+                <span className="tab-owl-button">
                   Strapi Support and Maintenance
-                </a>
+                </span>
               </div>
 
               <div
                 className={`item `}
                 onClick={(e) => handleCurrentClass(e, 6)}
               >
-                <a href="javascript:void(0);" className="tab-owl-button">
-                  Strapi UI/UX Design
-                </a>
+                <span className="tab-owl-button">Strapi UI/UX Design</span>
               </div>
             </OwlCarousel>
 

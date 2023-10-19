@@ -27,7 +27,8 @@ import ContactForm from "../contact-us/Components/ContactForm";
 import SEOData from "@/Components/SEO/SEOData";
 import { SEO } from "@/Configurations/SEOQuery";
 import OurWorkflow from "../strapi-cms-development-service/Components/OurWorkflow";
-import Calendly from "./Components/Calendly";
+import Calendly from "./Components/Calender";
+import Calender from "./Components/Calender";
 
 export default function Strapicmsconsultationservice() {
   const pathname = usePathname();
@@ -35,37 +36,19 @@ export default function Strapicmsconsultationservice() {
     <>
       <SEOData name={pathname} query={SEO("strapiConsultation")} />
       <Banner name={pathname} query={BANNER_QUERY("strapiConsultation")} />
-      <StrapiTitles
-        name={pathname}
-        query={STRAPI_SUBTITLE_QUERY("strapiConsultation")}
-      />
+      <StrapiTitles name={pathname} query={STRAPI_SUBTITLE_QUERY("strapiConsultation")} />
       <GoStrapi />
-      <OurServices
-        name={pathname}
-        query={OUR_SERVICES_QUERY("strapiConsultation")}
-      />
-      <ExpertResource
-        name={pathname}
-        query={STRAPI_EXPERT_RESOURCES("strapiConsultation")}
-      />
+      <OurServices name={pathname} query={OUR_SERVICES_QUERY("strapiConsultation")} />
+      <ExpertResource name={pathname} query={STRAPI_EXPERT_RESOURCES("strapiConsultation")} />
       <CTA name={pathname} query={CTA_QUERY("strapiConsultation")} />
       <OurWorkflow name={pathname} query={WORKFLOW("strapiConsultation")} />
-      <ServicesDetails
-        name={pathname}
-        query={SERVICES_DETILS_QUERY("strapiConsultation")}
-      />
-      <Calendly />
+      <ServicesDetails name={pathname} query={SERVICES_DETILS_QUERY("strapiConsultation")} />
+      <Calender />
       <FAQS name={pathname} query={FAQ("strapiConsultation")} />
-      <StrapiRelatedServices
-        name={pathname}
-        query={STRAPI_RELATED_SERVICES("strapiConsultation")}
-      />
+      <StrapiRelatedServices name={pathname} query={STRAPI_RELATED_SERVICES("strapiConsultation")} />
 
       <LatestNews name={pathname} query={LATEST_NEWS("strapiConsultation")} />
-      <ContactForm
-        name={pathname}
-        query={CONTACT_FORM_TITLE_QUERY("strapiConsultation")}
-      />
+      <ContactForm name={pathname} query={CONTACT_FORM_TITLE_QUERY("strapiConsultation")} />
     </>
   );
 }

@@ -39,3 +39,26 @@ query{
     }
   }
 }`;
+export const CALENDER_QUERY = `
+query{
+  strapiConsultation{
+    data{
+      id
+      attributes{
+        calender{
+          data{
+            id
+            attributes{
+              MainTitle{
+                id
+                Title
+                Description
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;

@@ -61,15 +61,26 @@ export default function HeaderForms(props: any) {
   };
   return (
     <div className='form-icon'>
-      <a href='javascript:void(0)' className='icon-rocket' onClick={toggleForm}>
-        <img src='https://www.addxp.com/src/images/rocket-icon.svg' alt='rocket-icon' className='icon' />
-        <img src='https://www.addxp.com/src/images/plane-line-svg.png' alt='plane-line-svg' className='icon-hover' />
-      </a>
+      <span className='icon-rocket' onClick={toggleForm}>
+        <img
+          src='https://www.addxp.com/src/images/rocket-icon.svg'
+          alt='rocket-icon'
+          className='icon'
+        />
+        <img
+          src='https://www.addxp.com/src/images/plane-line-svg.png'
+          alt='plane-line-svg'
+          className='icon-hover'
+        />
+      </span>
       <div className='slide-form'>
-        <a href='javascript:void(0)' className='slide-form-close' onClick={toggleForm}>
+        <span className='slide-form-close' onClick={toggleForm}>
           Close
-          <img src={strapi.strapihost + "/uploads/slide_close_3b3e805087.svg"} alt='slide-close' />
-        </a>
+          <img
+            src={strapi.strapihost + "/uploads/slide_close_3b3e805087.svg"}
+            alt='slide-close'
+          />
+        </span>
         <h5>{props.data.Title}</h5>
         <RichText htmlContent={props.data.Description}></RichText>
         <form id='HeaderContactUs' onSubmit={handleSubmit}>
@@ -126,14 +137,23 @@ export default function HeaderForms(props: any) {
                   required
                   onChange={(e) => setRequirement(e.target.value)}
                 />
-                <label htmlFor='HUserRequirements'>Describe Your Requirements (Optional)</label>
+                <label htmlFor='HUserRequirements'>
+                  Describe Your Requirements (Optional)
+                </label>
               </div>
 
               <div className='form-check d-flex'>
-                <input className='form-check-input' type='checkbox' value='' id='form2Example33' />
+                <input
+                  className='form-check-input'
+                  type='checkbox'
+                  value=''
+                  id='form2Example33'
+                />
                 <label className='form-check-label' htmlFor='form2Example33'>
-                  I agree to receive future communications from Addxp, in accordance with the
-                  <a href='/privacy-policy'>Privacy Policy</a> &<a href='/terms-conditions'>Terms Of Use</a>
+                  I agree to receive future communications from Addxp, in
+                  accordance with the
+                  <a href='/privacy-policy'>Privacy Policy</a> &
+                  <a href='/terms-conditions'>Terms Of Use</a>
                 </label>
               </div>
             </div>
