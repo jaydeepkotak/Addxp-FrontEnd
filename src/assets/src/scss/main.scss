@@ -1,0 +1,156 @@
+// @import "base/fonts";
+
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+@import "base/typography";
+@import "base/color";
+@import "base/mixins";
+@import "base/icons";
+
+@import "vendors/bootstrap";
+@import "vendors/jquery-ui";
+@import "base/buttons_&_links";
+
+@import "layout/navigation";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+
+@import "components/carousel";
+@import "components/x-component";
+@import "components/navigation-component";
+@import "components/cta-component";
+@import "components/slider-component";
+@import "components/consultation-email-component";
+@import "components/latest-news";
+@import "components/contact-form";
+@import "components/slider-verticle";
+@import "components/about-banner";
+@import "components/quote-component";
+@import "components/journey-component";
+@import "components/contact-banner";
+@import "components/weekday-component";
+@import "components/maps-component";
+@import "components/image-component";
+// @import 'components/about-contact-component';
+@import "components/what-we-believe-component";
+@import "components/6-item-component";
+@import "components/career-component";
+@import "components/slide-form";
+@import "components/activity-component";
+@import "components/strapi-banner";
+@import "components/strapi-half-image";
+@import "components/3-item-component";
+@import "components/strapi-item-feature";
+@import "components/feature-component";
+@import "components/faq-component";
+@import "components/resources-banner";
+@import "components/why-hire-component";
+@import "components/4-item-component";
+@import "components/right-image-component";
+@import "components/hire-strap-resource";
+@import "components/2-service-component";
+@import "components/strapi-quote-component";
+@import "components/strapi-services-component";
+@import "components/development-process-component";
+@import "components/strapi-right-image";
+@import "components/blog-banner";
+@import "components/blog-listing-page";
+@import "components/blog-detail-banner";
+@import "components/blog-detail-content";
+@import "components/workflow-component";
+@import "components/brand-guidelines-component";
+@import "components/brand-two-coloum";
+@import "components/brand-tagline";
+@import "components/press-listing-component";
+@import "components/pluging-right-image-component";
+@import "components/strapi-tabs-section";
+@import "components/career-detail-content";
+@import "components/career-detail-banner";
+@import "components/thank-you";
+@import "components/privacy-policy";
+@import "components/sitemap";
+@import "themes/theme";
+@import "themes/admin";
+@import "components/strapi-cms-consulting";
+@import "components/strapi-maintenance-and-support";
+@import "components/page-not-found";
+@import "components/new_timeline";
+@import "components/Banner-tabbing";
+@import "components/services-detail-hero";
+@import "components/services-process-wrapper";
+@import "components/services-visual-ux";
+@import "components/services-detail-experience";
+
+// .class {
+//   font-family: var(--font-poppins);
+// }
+html {
+  font-family: var(--font-poppins);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  scroll-padding: 80px;
+
+  @media (max-width: $mobile-breakpoint) {
+    scroll-padding: 60px;
+  }
+}
+
+body {
+  font-family: var(--font-poppins);
+  overflow-x: hidden;
+  padding-bottom: 0;
+  background: $light-gray-light;
+  margin: 0;
+}
+
+.bg-dark {
+  background-color: $dark-black !important;
+
+  .accrodian-section {
+    .accordian-top {
+      p {
+        color: $white;
+      }
+    }
+  }
+
+  .latest-news {
+    .large,
+    p {
+      color: $white;
+    }
+  }
+
+  .slider-verticle {
+    h5 {
+      color: $white;
+      max-width: 662px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.header-spacer {
+  height: 65px;
+
+  @media (max-width: $mobile-breakpoint) {
+    height: 65px;
+  }
+}
+
+.light-gray-bg {
+  background: $light-gray-light !important;
+  margin: 0;
+  padding: 0 0 100px;
+
+  @media (max-width: $mobile-breakpoint) {
+    padding-bottom: 50px;
+  }
+}
+body [class*=""] {
+  font-family: var(--font-poppins);
+}

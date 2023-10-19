@@ -1,0 +1,116 @@
+.three-item-component{
+    margin: 100px 0 84px;
+    text-align: center;
+    @media(max-width:$mobile-breakpoint){
+        margin: 50px 0 0;
+
+        .three-item-box{
+            display: block !important;
+            word-break: break-word;
+        }
+    }
+    
+    
+
+    .row{
+        margin: 100px -8px 0;
+        @media(max-width:$mobile-breakpoint){
+            margin-top: 50px;
+        }
+        .col-md-4{
+            margin-bottom: 16px;
+            padding: 0 8px;
+            @media(max-width:$tablet-breakpoint1){
+                width: 50%;
+            }
+            @media(max-width:$mobile-breakpoint){
+                margin-bottom: 30px;
+                width: 100%;
+            }
+
+
+            &:last-child{
+                .three-item-box{
+                    background: $dark-blue;
+
+                    &.bg-light{
+                        background-color: $white !important;
+
+                        &:hover{
+                            border: 2px solid #E97777 !important;
+                        }
+
+                        .large, p{
+                            color: $black;
+                        }
+
+                        
+                    }
+                   
+
+                    &:hover{
+                        background: $black;
+                        border: 2px solid transparent !important;
+                    }
+
+                    .large{
+                        color: $white;
+                    }
+                    p{
+                        color: $white;
+                    }
+
+                }
+            }
+        }
+
+        .three-item-box{
+            background: $white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: left;
+            height: 100%;
+            position: relative;
+            display: inline-block;
+            border:2px solid transparent;
+            min-height: 400px;
+            @media(max-width:$tablet-breakpoint){
+                padding: 25px;
+            }
+            @media(max-width:$mobile-breakpoint){
+                padding: 25px 15px;
+            }
+            @media (min-width:$mobile-breakpoint) {
+                min-height: 437px;
+            }
+
+            &:hover{
+                border:2px solid $tag-color; 
+            }
+            
+            .large{
+                margin-bottom: 30px;
+                font-weight: 400;
+                color: $black;
+                @media(max-width:$mobile-breakpoint){
+                    font-size: 35px;
+                    line-height: 45px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            p{
+                font-weight: 300;
+                margin-bottom: 60px;
+            }
+
+            .btn-defualt{
+                position: absolute;
+                bottom: 25px;
+            }
+            
+        }
+    }
+
+    
+}

@@ -1,0 +1,43 @@
+.strapi-half-image{
+    @include component_space;
+
+    h5{
+        margin-bottom: 35px;
+        @media(max-width:$mobile-breakpoint){
+            margin-bottom: 30px;
+        }
+    }
+
+    p{
+        margin-bottom: 0;
+    }
+
+    .row{
+        margin: 0;
+    }
+
+    .col-md-6{
+        padding: 0;
+        @media(max-width:$mobile-breakpoint){
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    .strapi-right {
+        display: flex;
+        justify-content: center;
+        padding-left: 114px;
+        @media(max-width:$mobile-breakpoint){
+            margin-top: 60px;
+            padding-left: 0;
+        }
+        img{
+            width: 100%;
+            display: block;
+            @media(max-width:$mobile-breakpoint){
+                width: 310px;
+            }
+        }
+    }
+}

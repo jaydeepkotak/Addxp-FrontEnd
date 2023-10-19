@@ -1,0 +1,4 @@
+{
+  "strapihost": "http://localhost:1337",
+  "strapigraphql": "http://localhost:1337/graphql"
+}

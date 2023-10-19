@@ -1,0 +1,1254 @@
+import { Paragraph } from "react-bootstrap-icons";
+
+export const CTA_QUERY = (parameter) => `
+query{
+ ${parameter}{
+  data{
+    id
+    attributes{
+       PageTitle
+      Slug
+      cta{
+        data{
+          id
+          attributes{
+            CTAInfo{
+              id
+              Title
+              Description
+                Body
+              Images{
+                data{
+                  id
+                  attributes{
+                    url
+                    alternativeText
+                  }
+                }
+              }
+            }
+            CTALinks{
+              id
+              href
+              label
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
+`;
+export const TITIE_QUERY = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        service_title{
+          data{
+            id
+            attributes{
+              ServiceTitle{
+                id
+                Title
+                SubTitle
+                Body
+                Description
+                Images{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const SERVICE_EXP_QUERY = (parameter) => `
+query{
+   ${parameter}{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        service_experience{
+          data{
+            id
+            attributes{
+              ComponentInfo{
+                id
+                Title
+                SubTitle
+              }
+              ExperienceList{
+                id
+                Title
+                Description
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const OUR_SERVICES_QUERY = (parameter) => `
+query{
+ ${parameter}{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        our_service{
+          data{
+            id
+            attributes{
+              ComponentInfo{
+                id
+                Title
+                SubTitle
+              }
+              ServiceList{
+                id
+                Body
+                Summary
+                Links{
+                  id
+                  href
+                  label
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const BANNER_QUERY = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        banner{
+          data{
+            id
+            attributes{
+              Banner{
+                id
+                Title
+                Description
+              }
+              BannerLink{
+                id
+                href
+                label
+              }
+              backgroundImg{
+                data{
+                  id
+                  attributes{
+                    url
+                    alternativeText
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const SERVICES_DETILS_QUERY = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        experience{
+          data{
+            id
+            attributes{
+              ServiceTitle{
+                id
+                Title
+                SubTitle
+              }
+              Experience{
+                id
+                Title
+                SubTitle
+                Body
+                Description
+                Images{
+                  data{
+                    attributes{
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const BANNER_NAV_QUERY = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        banner_navigation{
+          data{
+            id
+            attributes{
+              NavLink{
+                id
+                href
+                label
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const CAREER_POSITION = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        AboutLink{
+          id
+          href
+          label
+        }
+        positions{
+          data{
+            id
+            attributes{
+              EventTitle
+              Info{
+                __typename
+                ... on ComponentReuseCard{
+                  id
+                  LogoTitle
+                  LogoLink{
+                    id
+                    href
+                    label
+                  }
+                  Icon{
+                    data{
+                      attributes{
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                  HoverIcon{
+                    data{
+                      id
+                      attributes{
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                  AerrowIcon{
+                    data{
+                      id
+                      attributes{
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                  TitleIcon{
+                    id
+                    Title
+                    Icon{
+                      data{
+                        id
+                        attributes{
+                          alternativeText
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              positions{
+                data{
+                  id
+                  attributes{
+                    EventTitle
+                    Info{
+                      __typename
+                      ... on ComponentReuseCard{
+                         LogoTitle
+                         id
+                  LogoLink{
+                    id
+                    href
+                    label
+                  }
+                  Icon{
+                    data{
+                      attributes{
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                  HoverIcon{
+                    data{
+                      id
+                      attributes{
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                  AerrowIcon{
+                    data{
+                      id
+                      attributes{
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                  TitleIcon{
+                    id
+                    Title
+                    Icon{
+                      data{
+                        id
+                        attributes{
+                          alternativeText
+                          url
+                        }
+                      }
+                    }
+                  }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const RICHTEXT_QUERY = `
+query{
+  home{
+    data{
+      id
+      attributes{
+         richtext{
+          data{
+            id
+            attributes{
+              Richtext{
+                id
+                Description
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}`;
+export const THANKS_QUERY = `
+query{
+  thankYou{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        ThankYou{
+          id
+          Title
+          SubTitle
+          Body
+          Description
+          Images{
+            data{
+              id
+              attributes{
+                alternativeText
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}`;
+export const STRAPI_SUBTITLE_QUERY = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        strapi_title{
+          data{
+            id
+            attributes{
+              StrapiTitle{
+                id
+                Title
+                Description
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const BLOG_LISTING = `
+query{
+  blogListings{
+    data{
+      id
+      attributes{
+        EventTitle
+        blogs{
+          data{
+            id
+            attributes{
+              RelationTitle
+              Blogs{
+                id
+                Title
+                tagLabel
+                Date
+                Creator
+                Links{
+                  id
+                  href
+                  label
+                }
+                image{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const BRAND_TAGLINE = (parameter) => `
+query{
+  brandGuideline{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+      	${parameter}{
+          data{
+            id
+            attributes{
+              Description
+              Tagline{
+                id
+                Title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const KEY_TAGLINE = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        key_tagline{
+          data{
+            id
+            attributes{
+              MainTitle
+              Image{
+                data{
+                  id
+                  attributes{
+                    alternativeText
+                    url
+                  }
+                }
+              }
+              Subtagline{
+                id
+                Number
+                Title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const UI_UX_DETAILS = `
+query
+{
+  uiUxDesigner{
+    data{
+      id
+      attributes{
+      Details{
+        id
+        Description
+        Title
+      }
+      }
+    }
+  }
+}
+`;
+export const STRAPI_RELATED_SERVICES = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        service_title{
+          data{
+            id
+            attributes{
+              StrapiTitle{
+                id
+                Title
+                Description
+              }
+            }
+          }
+        }
+        related_services{
+          data{
+            id
+            attributes{
+              ServiceDetails{
+                id
+                Body
+                Summary
+                Links{
+                  id
+                  href
+                  label
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const STRAPI_EXPERT_RESOURCES = (parameter) => `
+query
+{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        PageTitle
+        Slug
+        expert_resource{
+          data{
+            id
+            attributes{
+              ExpertResource{
+                __typename
+                ...on  ComponentExpertResourceExpertResource{
+                  id
+                  Title
+                  Description
+                  Image{
+                    data{
+                      id
+                      attributes{
+                        url
+                        alternativeText
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const LATEST_NEWS = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        news_heading{
+          data{
+            id
+            attributes{
+              NewsHeading{
+                id
+                Title
+                Description
+              }
+            }
+          }
+        }
+        blogs{
+          data{
+            id
+            attributes{
+              Blogs{
+                id
+                Title
+                tagLabel
+                Date
+                Creator
+                Links{
+                  id
+                  href
+                  label
+                }
+                image{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const FAQ = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        faq_title{
+          data{
+            id
+            attributes{
+              FAQTitle{
+                id
+                Title
+                Description
+              }
+            }
+          }
+        }
+        faqs{
+          data{
+            id
+            attributes{
+              FAQ{
+                ... on ComponentFaqFaq{
+                  id
+                  Question
+                  Answer
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const DEVELOPMENT_PROCESS = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        process_title{
+          data{
+            id
+            attributes{
+              ProcessTitle{
+                id
+                Title
+                Subtitle
+                Description
+              }
+              development_process{
+                data{
+                  id
+                  attributes{
+                    Details{
+                      id
+                      Description
+                      Images{
+                        data{
+                          id
+                          attributes{
+                            alternativeText
+                            url
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const CAROUSEL = `
+query{
+  home{
+    data{
+      id
+      attributes{
+        carousel{
+          data{
+            id
+            attributes{
+              Carousel{
+                id
+                Title
+                Description
+                Body
+                ArticleId
+                Links{
+                  id
+                  href
+                  label
+                }
+                DesktopImg{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+                MobileImg{
+                   data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const SERVICE_CARD = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        service_card{
+          data{
+            id
+            attributes{
+              MainTitle{
+                id
+                Title
+                SubTitle
+              }
+              Details{
+                id
+                Title
+                Body
+                Summary
+                Images{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const FORM_TITLE_QUERY = (parameter) => `
+query
+{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        form_title{
+          data{
+            id
+            attributes{
+              Form{
+                id
+                Title
+                Description
+                Images{
+                  data{
+                    id
+                    attributes{
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const CONTACT_FORM_TITLE_QUERY = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        contact_form{
+          data{
+            id
+            attributes{
+              RelationTitle
+              Right{
+                id
+                Title
+                Description
+              }
+              Left{
+                id
+                Details{
+                  id
+                  Title
+                  Description
+                }
+                ImageData{
+                  id
+                  ImageDesktop{
+                    data{
+                      id
+                      attributes{
+                        url
+                        alternativeText
+                      }
+                    }
+                  }
+                  ImageMobile{
+                    data{
+                      id
+                      attributes{
+                        url
+                        alternativeText
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const BLOGS_DETAILS = (parameter) => `
+/api/blogs?filters[Slug][$eq]=${parameter}&populate=Blogs.image&populate=Blogs.Links&populate=Blogs.Companylogo&populate=BlogBody&populate=BlogBody.Images&populate=Similar_blog&populate=Similar_blog.Blogs.image&populate=Similar_blog.Blogs.Links&populate=social_icons.SocialIcons.Icons&&populate=social_icons.SocialIcons.HoverIcon&populate=social_icons.SocialIcons.Links
+`;
+export const HOME_SLIDER = (parameter) => `
+query{
+   ${parameter}{
+    data{
+      id
+      attributes{
+        home_slider{
+          data{
+            id
+            attributes{
+              MainTitle{
+                id
+                Title
+                Description
+              }
+              Details{
+                id
+                Title
+                Subtitle
+                Description
+                Images{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}`;
+
+export const UPLOAD_FORM_TITLE = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        upload_form_title{
+         data{
+            id
+            attributes{
+              Left{
+                id
+                Title
+                Description
+                Image{
+                  data{
+                    id
+                    attributes{
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+              }
+              Right{
+                id
+                Title
+                Description
+                Image{
+                  data{
+                    id
+                    attributes{
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+              }
+              RightHead{
+                id
+                Title
+                Description
+              }
+}
+          }
+        }
+      }
+    }
+  }
+
+}
+`;
+
+export const IMAGE_GALLAEY = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        gallrays{
+          data{
+            id
+           attributes{
+              MainTitle{
+                id
+                Title
+                SubTitle
+              }
+              LeftSection{
+                id
+                Title
+               Description
+              }
+              LeftImages{
+                id
+                Images{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+              RightFirst{
+                  id
+                 Title
+                Description
+              }
+              RightFirstImages{
+                id
+                Images{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+              RightSec{
+                id
+                Title
+                Description
+              }
+              RightSecImage{
+                id
+                Images{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+export const VERTICAL_SLIDER = (parameter) => `
+query{
+   ${parameter}{
+    data{
+      id
+      attributes{
+        verticle_slider{
+           data{
+      id
+      attributes{
+        RelationTitle
+        MainTitle{
+          id
+          Title
+          Description
+        }
+        VerticalSlider{
+           id
+          TabTitle
+          Title
+          Description
+          Images{
+             data{
+              id
+              attributes{
+                url
+                alternativeText
+              }
+            }
+
+          }
+          SubTitle
+          SubDescription
+        }
+      }
+    }
+        }
+      }
+    }
+  }
+
+}`;
+
+export const WORKFLOW = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        work_flow{
+          data{
+            id
+            attributes{
+              Main{
+                id
+                Title
+                Description
+              }
+              Workflowdata{
+                id
+                Title
+                LongTitle
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export const SERVICE_PROCESS = (parameter) => `
+query{
+ ${parameter}{
+   data{
+    id
+    attributes{
+      services_process{
+        data{
+          id
+          attributes{
+            ServiceTitle{
+              id
+              Title
+              SubTitle
+            }
+            ServiceList{
+              id
+              Title
+              Description
+              Image{
+                data{
+                  id
+                  attributes{
+                    alternativeText
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+}`;
+
+export const XCOMPONENT = `
+query{
+  home{
+    data{
+      id
+      attributes{
+        xcomponent{
+          data{
+            id
+            attributes{
+              MainTitle
+              XcomponentData{
+                id
+                Title
+                Description
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;

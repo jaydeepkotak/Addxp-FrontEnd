@@ -1,0 +1,95 @@
+.services-process-wrapper{
+    @include component_space_150;
+
+    .tag-line, h5{
+        text-align: center;
+    }
+
+    h5{
+        color: $white;
+    }
+
+    &_list{
+        background-color: $white;
+        border-radius: 20px;
+        padding: 60px 30px;
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @media(max-width:$tablet-breakpoint2){
+            justify-content: center;
+        }
+
+        @media(max-width:$tablet-original){
+            display: block;
+            padding: 35px;
+        }
+
+        .list_item{
+            width: calc(19.45% - 10px);
+            flex: 1 0 0%;
+
+            @media(max-width:$desktop-breakpoint){
+                width: calc(19.30% - 10px);
+            }
+
+
+            @media(max-width:$tablet-breakpoint2){
+                width: calc(32.5% - 10px);
+                flex: inherit;
+
+                &:first-child{
+                    margin-bottom: 30px;
+                }
+            }
+
+            
+
+            @media(max-width:$tablet-original){
+                width: 100%;
+            }
+
+            &:not(:first-child){
+                margin-left: 20px;
+
+                @media(max-width:$tablet-original){
+                    margin: 50px 0 0;
+                }
+            }
+
+            &_title{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+
+                img{
+                    max-width: 35px;
+                    margin-right: 10px;
+                }
+
+                span{
+                    font-size: 30px;
+                    line-height: 25px;
+                    color: $tag-color;
+                }
+            }
+
+            ul{  
+                padding-left: 18px;
+                margin: 0;
+
+                li{
+                    font-size: 15px;
+                    line-height: 30px;
+                    color: $black;
+
+                    &:not(:last-child){
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

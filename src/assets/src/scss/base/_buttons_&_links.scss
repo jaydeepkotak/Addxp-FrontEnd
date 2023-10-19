@@ -1,0 +1,91 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+@import 'color';
+
+.dark-background-button{
+    background-color: $black;
+    padding: 50px;
+}
+
+.light-background-button{
+    background-color: $white;
+    padding: 50px;
+}
+
+.btn-defualt{
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s;
+    text-align: center;
+    max-width: fit-content;
+    text-align: center;
+    height: 41px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    background: $tag-color;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $white;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 0 16px;
+
+    &:hover{
+        background: $btn-hover;
+        color: $white;
+    }
+
+}
+
+.fill-button-1{
+    background-color: $white;
+    color: $black;
+
+    &:hover{
+        background-color:$dark-blue;
+        color: $white;
+    }
+}
+
+.fill-button-2{
+    background-color: $dark-blue;
+    color: $white;
+
+    &:hover{
+        background-color: $fill-btn-2;
+    }
+}
+
+.fill-button-3{
+    padding: 13px 26px;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Montserrat', sans-serif;
+    
+    border-radius: 5px;
+    transition: all 0.3s;
+    color: $dark-blue;
+    background-color: $white;
+
+
+    &:hover{
+        background-color: $fill-btn-2;
+        color: $white;
+    }
+}
+
+.text-btn-lg{
+    font-size: 35px;
+    line-height: 48px;
+    font-family: 'Cardo', serif;
+    
+    color: $dark-blue;
+
+    
+}

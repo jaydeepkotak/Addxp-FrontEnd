@@ -1,0 +1,32 @@
+export const EXPERIENCE = `
+query{
+    career{
+      data{
+        attributes{
+          ExperienceTitle{
+            Title
+            SubTitle
+          }
+          experiences{
+            data{
+              id
+              attributes{
+                Experience{
+                  id
+                  Title
+                  Body
+                  Images{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }`;

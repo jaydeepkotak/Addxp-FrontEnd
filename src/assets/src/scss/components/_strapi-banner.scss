@@ -1,0 +1,182 @@
+.strapi-banner {
+  width: 100%;
+  min-height: 473px;
+  @include flexbox;
+  align-items: center;
+  background-size: cover !important;
+  position: relative;
+  @media (max-width: $mobile-breakpoint) {
+    min-height: 525px;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    background: url(../../images/strapi-banner-mobile.jpg) no-repeat left top !important;
+    background-size: cover !important;
+  }
+
+  &.kontent-ai-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/kontent-ai-banner-mobile.jpg) no-repeat
+        center !important;
+      background-size: cover !important;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    // background: transparent linear-gradient(90deg, #000000 0%, #0000007C 60%, #54545400 100%) 0% 0% no-repeat;
+    // @media(max-width:$mobile-breakpoint){
+    //     background: transparent linear-gradient(180deg, #00000000 0%, #00000080 31%, #000000 100%) 0% 0% no-repeat padding-box;
+    //     top: auto;
+    //     bottom: 0;
+    // }
+  }
+
+  .contact-main {
+    max-width: 608px;
+
+    h5 {
+      color: $white;
+      margin-bottom: 15px;
+      display: block;
+      line-height: 60px;
+    }
+
+    p {
+      color: $white;
+      margin-bottom: 0;
+    }
+
+    .btn-defualt {
+      margin-top: 30px;
+    }
+  }
+
+  &.contentfull-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/contentful-banner-mobile.jpg) no-repeat left
+        top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  &.contstack-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/contstack-banner-mobile.jpg) no-repeat left
+        top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  &.viro-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/viro-banner-mobile.jpg) no-repeat left top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.strapi-cms-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/strapi-cms-mobile.jpg) no-repeat left top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.strapi-pluging-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/pluging-dev-mobile.jpg) no-repeat left top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.strapi-upgrade-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/strapi-upgrade-banner-mobile.jpg) no-repeat
+        left top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.strapi-migration-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/strapi-migration-banner-mobile.jpg) no-repeat
+        left top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.strapi-ui-ux-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/strapi-ui-ux-banner-mobile.jpg) no-repeat
+        left top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.umbraco-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/umbraco-banner-mobile.jpg) no-repeat left top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.kentico-banner {
+    @media (max-width: $mobile-breakpoint) {
+      background: url(../../images/kentico-banner-mobile.jpg) no-repeat left top !important;
+      background-size: cover !important;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.tab-menu {
+  margin-top: -50px;
+  ul {
+    @include flexbox;
+    margin: 0;
+    padding: 0;
+    position: static;
+    bottom: 5px;
+
+    li {
+      list-style: none;
+      margin-right: 50px;
+      margin-bottom: 20px;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+export const ENGAGE_MODEL = `
+query{
+    hireStrapiDeveloper{
+      data{
+        id
+        attributes{
+          engagement_model{
+            data{
+              id
+              attributes{
+                MainTitle{
+                  id
+                  Title
+                  Description
+                }
+                MultilistData{
+                  id
+                  Title
+                  Description
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const AVAILABILITY = `
+query{
+    hireStrapiDeveloper{
+      data{
+        id
+        attributes{
+          availability{
+            data{
+              id
+              attributes{
+                Availability{
+                  id
+                  Title
+                  SubTitle
+                  Body
+                  Description
+                  Images{
+                    data{
+                      id
+                      attributes{
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
