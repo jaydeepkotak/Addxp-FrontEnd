@@ -60,9 +60,7 @@ export default function RootLayout({
   })(window,document,'script','dataLayer','GTM-NM9VSWDF');`;
   return (
     <html lang="en" className={`${poppins.variable}`}>
-      <Helmet defer={false}>
-        <script>{gtmContainerId}</script>
-      </Helmet>
+      
       <body className={bodyclass}>
         <AddXpHeader />
         {children}
