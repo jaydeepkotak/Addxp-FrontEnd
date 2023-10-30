@@ -122,16 +122,24 @@ export default function ServiceTitle(props: any) {
     <section
       className='cta-component'
       data-img-src={
-        strapi.strapihost + userDetails?.data.attributes.cta.data.attributes.CTAInfo.Images.data[0].attributes.url
+        userDetails?.data.attributes.cta.data.attributes.CTAInfo.Images.data[0] == null
+          ? null
+          : strapi.strapihost + userDetails?.data.attributes.cta.data.attributes.CTAInfo.Images.data[0].attributes.url
       }
     >
       <div className='container'>
         <div className='banner-desc'>
-          <h5 className='xl'>{userDetails?.data.attributes.cta.data.attributes.CTAInfo.Title}</h5>
-          <RichText htmlContent={userDetails?.data.attributes.cta.data.attributes.CTAInfo.Description}></RichText>
-          <a href={userDetails?.data.attributes.cta.data.attributes.CTALinks.href} className='btn-defualt'>
-            {userDetails?.data.attributes.cta.data.attributes.CTALinks.label}
-          </a>
+          {userDetails?.data.attributes.cta.data.attributes.CTAInfo.Title == null ? null : (
+            <h5 className='xl'>{userDetails?.data.attributes.cta.data.attributes.CTAInfo.Title}</h5>
+          )}
+          {userDetails?.data.attributes.cta.data.attributes.CTAInfo.Description == null ? null : (
+            <RichText htmlContent={userDetails?.data.attributes.cta.data.attributes.CTAInfo.Description}></RichText>
+          )}
+          {userDetails?.data.attributes.cta.data.attributes.CTALinks.href == null ? null : (
+            <a href={userDetails?.data.attributes.cta.data.attributes.CTALinks.href} className='btn-defualt'>
+              {userDetails?.data.attributes.cta.data.attributes.CTALinks.label}
+            </a>
+          )}
         </div>
       </div>
     </section>

@@ -61,3 +61,46 @@ query{
     }
   }
 `;
+export const HIRE_TAB_QUERY = `
+query{
+  hireStrapiDeveloper{
+    data{
+      id
+      attributes{
+        hire_tab_component{
+          data{
+            id
+            attributes{
+              TitleData{
+                id
+                Title
+                Description
+              }
+              TabData{
+                id
+                Title
+                Description
+                Image{
+                  data{
+                    id
+                    attributes
+                    {
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+                Link{
+                  id
+                  href
+                  label
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;

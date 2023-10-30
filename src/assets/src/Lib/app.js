@@ -1,3 +1,9 @@
+require("dotenv").config();
+
+dbUser = process.env.DATABASE_USER;
+dbPassword = process.env.DATABASE_PASSWORD;
+dbCluster = process.env.DATABASE_CLUSTER;
+
 $(document).ready(function () {
   // Clear the checkbox value when the page is unloaded (on back navigation)
   $(window).on("unload", function () {
@@ -32,24 +38,14 @@ if (box !== null) {
 var fileUploadedURL = "";
 /* ============================ Firebase: Start ============================ */
 
-//Unique Firebase Object
-/* ===================== Umang Poriya Config ===================== */
-// const firebaseConfig = {
-//   apiKey: "AIzaSyB7dWy0gIV_B8WDSDveHiSAsohoE5Q8Imo",
-//   authDomain: "addxp-c2096.firebaseapp.com",
-//   projectId: "addxp-c2096",
-//   storageBucket: "addxp-c2096.appspot.com",
-//   messagingSenderId: "1095042419049",
-//   appId: "1:1095042419049:web:abad4e5a679a27565995f8",
-// };
 /* ===================== AddXp Config ===================== */
 const firebaseConfig = {
-  apiKey: "AIzaSyDitk4h82e4oYHO-z-O-gYIQbF8mFl2Xrw",
-  authDomain: "addxp-technologies-forms.firebaseapp.com",
-  projectId: "addxp-technologies-forms",
-  storageBucket: "addxp-technologies-forms.appspot.com",
-  messagingSenderId: "998988281684",
-  appId: "1:998988281684:web:73c1b327682da479e4bac1",
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
 };
 
 // Initialize Firebase
@@ -78,7 +74,17 @@ function submitForm(e) {
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   var yyyy = today.getFullYear();
   var datetime =
-    mm + "/" + dd + "/" + yyyy + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    mm +
+    "/" +
+    dd +
+    "/" +
+    yyyy +
+    " " +
+    today.getHours() +
+    ":" +
+    today.getMinutes() +
+    ":" +
+    today.getSeconds();
   // Firebase Form Name
   var strFormName = $(e.target).attr("data-form-name");
 
@@ -96,13 +102,25 @@ function submitForm(e) {
     var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
     var yyyy = today.getFullYear();
     var datetime =
-      mm + "/" + dd + "/" + yyyy + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      mm +
+      "/" +
+      dd +
+      "/" +
+      yyyy +
+      " " +
+      today.getHours() +
+      ":" +
+      today.getMinutes() +
+      ":" +
+      today.getSeconds();
   }
 
   var focusSet = false;
   if (!UserName.val()) {
     if (UserName.parent().next(".validation").length == 0) {
-      UserName.parent().after("<div class='validation'>Please enter User Name</div>");
+      UserName.parent().after(
+        "<div class='validation'>Please enter User Name</div>"
+      );
     }
     e.preventDefault();
     UserName.focus();
@@ -113,7 +131,9 @@ function submitForm(e) {
 
   if (UserName.val() && IsUsername(UserName.val()) == false) {
     if (UserName.parent().next(".validation").length == 0) {
-      UserName.parent().after("<div class='validation'>Please enter Valid Name</div>");
+      UserName.parent().after(
+        "<div class='validation'>Please enter Valid Name</div>"
+      );
     }
     e.preventDefault();
     if (!focusSet) {
@@ -125,7 +145,9 @@ function submitForm(e) {
 
   if (!UserEmailID.val()) {
     if (UserEmailID.parent().next(".validation").length == 0) {
-      UserEmailID.parent().after("<div class='validation'>Please enter Email Address</div>");
+      UserEmailID.parent().after(
+        "<div class='validation'>Please enter Email Address</div>"
+      );
     }
     e.preventDefault();
     if (!focusSet) {
@@ -137,7 +159,9 @@ function submitForm(e) {
 
   if (UserEmailID.val() && IsEmail(UserEmailID.val()) == false) {
     if (UserEmailID.parent().next(".validation").length == 0) {
-      UserEmailID.parent().after("<div class='validation'>Please enter Valid Email</div>");
+      UserEmailID.parent().after(
+        "<div class='validation'>Please enter Valid Email</div>"
+      );
     }
     e.preventDefault();
     if (!focusSet) {
@@ -149,7 +173,9 @@ function submitForm(e) {
 
   if (!UserCompanyName.val()) {
     if (UserCompanyName.parent().next(".validation").length == 0) {
-      UserCompanyName.parent().after("<div class='validation'>Please enter Company Name</div>");
+      UserCompanyName.parent().after(
+        "<div class='validation'>Please enter Company Name</div>"
+      );
     }
     e.preventDefault();
     if (!focusSet) {
@@ -161,7 +187,9 @@ function submitForm(e) {
 
   if (!UserPrivacyPolicy.is(":checked")) {
     if (UserPrivacyPolicy.parent().next(".validation").length == 0) {
-      UserPrivacyPolicy.parent().after("<div class='validation'>This field is required.</div>");
+      UserPrivacyPolicy.parent().after(
+        "<div class='validation'>This field is required.</div>"
+      );
     }
     e.preventDefault();
     if (!focusSet) {
@@ -195,9 +223,9 @@ function submitForm(e) {
 
       //Pushing Data to Firebase
       db.doc().set({
-        to: ["info@addxp.com"],
-        cc: ["sales@addxp.com"],
-        bcc: ["marketing@addxp.com"],
+        to: [process.env.to],
+        cc: [process.env.cc],
+        bcc: [process.env.bcc],
         message: {
           subject: document.title,
           text: "Welcome to the addxp",
@@ -242,7 +270,17 @@ $("#Bsubmit").click(function (e) {
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   var yyyy = today.getFullYear();
   var datetime =
-    mm + "/" + dd + "/" + yyyy + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    mm +
+    "/" +
+    dd +
+    "/" +
+    yyyy +
+    " " +
+    today.getHours() +
+    ":" +
+    today.getMinutes() +
+    ":" +
+    today.getSeconds();
   // var currentdate = new Date();
   // var datetime =  currentdate.getDay() + "/" + currentdate.getMonth() + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
   var pdfUrl = "./src/file/Brand Guidelines - Addxp Technologies.pdf";
@@ -251,7 +289,9 @@ $("#Bsubmit").click(function (e) {
   if (!FullName.val()) {
     if (FullName.parent().next(".validation").length == 0) {
       // only add if not added
-      FullName.parent().after("<div class='validation'>Please enter User Name</div>");
+      FullName.parent().after(
+        "<div class='validation'>Please enter User Name</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     FullName.focus();
@@ -263,7 +303,9 @@ $("#Bsubmit").click(function (e) {
   if (FullName.val() && IsUsername(FullName.val()) == false) {
     if (FullName.parent().next(".validation").length == 0) {
       // only add if not added
-      FullName.parent().after("<div class='validation'>Please enter Valid Name</div>");
+      FullName.parent().after(
+        "<div class='validation'>Please enter Valid Name</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -276,7 +318,9 @@ $("#Bsubmit").click(function (e) {
   if (!BrandEmailID.val()) {
     if (BrandEmailID.parent().next(".validation").length == 0) {
       // only add if not added
-      BrandEmailID.parent().after("<div class='validation'>Please enter Email Address</div>");
+      BrandEmailID.parent().after(
+        "<div class='validation'>Please enter Email Address</div>"
+      );
     }
     e.preventDefault();
     if (!focusSet) {
@@ -288,7 +332,9 @@ $("#Bsubmit").click(function (e) {
 
   if (BrandEmailID.val() && IsEmail(BrandEmailID.val()) == false) {
     if (BrandEmailID.parent().next(".validation").length == 0) {
-      BrandEmailID.parent().after("<div class='validation'>Please enter Valid Email</div>");
+      BrandEmailID.parent().after(
+        "<div class='validation'>Please enter Valid Email</div>"
+      );
     }
     e.preventDefault();
     if (!focusSet) {
@@ -303,7 +349,9 @@ $("#Bsubmit").click(function (e) {
   if (PhoneNumber.val() && validationPhonenum(PhoneNumber.val()) == false) {
     if (PhoneNumber.parent().next(".validation").length == 0) {
       // only add if not added
-      PhoneNumber.parent().after("<div class='validation'>Please enter Valid Name</div>");
+      PhoneNumber.parent().after(
+        "<div class='validation'>Please enter Valid Name</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -343,9 +391,9 @@ $("#Bsubmit").click(function (e) {
 
       //Pushing Data to Firebase
       db.doc().set({
-        to: ["info@addxp.com"],
-        cc: ["sales@addxp.com"],
-        bcc: ["marketing@addxp.com"],
+        to: [process.env.to],
+        cc: [process.env.cc],
+        bcc: [process.env.bcc],
         message: {
           subject: document.title,
           text: "Welcome to the addxp",
@@ -378,23 +426,6 @@ $("#Bsubmit").click(function (e) {
     });
 });
 
-// $("#BtnSubscribe").click(function(){
-//   $.ajax({
-//     url: "https://api.smtp2go.com/v3/email/send",
-//     method: 'POST',
-//     headers: { 'Content-Type': "application/json" },
-//     data: JSON.stringify({
-//       'api_key': "api-860041481CC511EE9C9DF23C91C88F4E",
-//       'to': ["meetk@addact.net"],
-//       'sender': "mail.smtp2go.com",
-//       'subject': "Testing smtp2go!",
-//       'text_body': "Test smtp2go message."
-//       }),
-//     })
-//   .done(function(result) { console.log(result); })
-//   .fail(function(err) { throw err; });
-// });
-
 $("#BtnSubscribe").click(function (e) {
   e.preventDefault();
 
@@ -404,7 +435,17 @@ $("#BtnSubscribe").click(function (e) {
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   var yyyy = today.getFullYear();
   var datetime =
-    mm + "/" + dd + "/" + yyyy + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    mm +
+    "/" +
+    dd +
+    "/" +
+    yyyy +
+    " " +
+    today.getHours() +
+    ":" +
+    today.getMinutes() +
+    ":" +
+    today.getSeconds();
 
   if (!UserEmailID.val() || IsEmail(UserEmailID.val()) == false) {
     e.preventDefault();
@@ -430,9 +471,9 @@ $("#BtnSubscribe").click(function (e) {
 
       //Pushing Data to Firebase
       db.doc().set({
-        to: ["info@addxp.com"],
-        cc: ["sales@addxp.com"],
-        bcc: ["marketing@addxp.com"],
+        to: [process.env.to],
+        cc: [process.env.cc],
+        bcc: [process.env.bcc],
         message: {
           subject: document.title,
           text: "Welcome to the addxp",
@@ -463,74 +504,6 @@ $("#BtnSubscribe").click(function (e) {
     });
 });
 
-// $("#BtnSubscribeCopy").click(function (e) {
-//   e.preventDefault();
-
-//   var UserEmailID = $("#CTAEmailIDCopy").val();
-
-//   if (UserEmailID === null || UserEmailID === "") {
-//     $("#CTAEmailIDCopy").focus();
-//     $("#CTAEmailIDCopy").attr("style", "box-shadow: 0 0 5pt 2pt #E97777;");
-//     return false;
-//   }
-
-//   // Firebase Form Name
-//   var strFormName = $(this).attr("data-form-name");
-
-//   // Access Firebase Database Collection
-//   const db = firestore.collection(strFormName);
-
-//   // Pushing Data to Firebase
-//   db.doc()
-//     .set({
-//       EmailID: UserEmailID,
-//     })
-//     .then(() => {
-//       alert("Data has been pushed to Firebase.");
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-//   document.getElementById("CTAEmailIDCopy").value = '';
-
-//   $.getJSON('https://api.ipify.org?format=json', function (data) {
-//     var clientIP = data.ip;
-//     // var countryName = data.country_name;
-//     // var countryCode = data.country;
-//     // var cityName = data.city;
-//     console.log("Client IP:", clientIP);
-
-//     // Send email using SMTPJS
-
-//     Email.send({
-//       Host: "smtp.elasticemail.com",
-//       Username: "meetk@addact.net",
-//       Password: "D4DEA15C44CAEA930C70718149323F42CD41",
-//       To: UserEmailID,
-//       From: "meetk@addact.net",
-//       Subject: document.title,
-//       Body: `<html>
-//      <head>
-//      </head>
-//      <body>
-//      <p>Hello Team,
-//      <br>
-//      We have got the Inquiry
-//      <br></p>
-//      <p><b>Email:</b> ${UserEmailID}</p>
-//      <p><b>User IP:</b> ${clientIP}</p>
-//      <p>Thank you & Regards,
-//      <br>
-//      <b>Addxp</b></p>
-//      </body>
-//      </html>`,
-//       SecureToken: "bf2b9417-935a-42f6-b9db-cb863a22b37e",
-//     }).then(function (message) {
-//       console.log("Email sent successfully!", message);
-//     });
-//   });
-// });
-
 // Career Detail Form Submit
 $("#CarreerApplicationSubmit").click(function (e) {
   e.preventDefault();
@@ -546,14 +519,23 @@ $("#CarreerApplicationSubmit").click(function (e) {
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   var yyyy = today.getFullYear();
   var datetime =
-    mm + "/" + dd + "/" + yyyy + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  // var CandidateLink2 = $("#CandidateHyperLink1");
-  // var CandidateLink3 = $("#CandidateHyperLink1");
-  // var CandidateLink4 = $("#CandidateHyperLink1");
-  // var CandidateLink5 = $("#CandidateHyperLink1");
+    mm +
+    "/" +
+    dd +
+    "/" +
+    yyyy +
+    " " +
+    today.getHours() +
+    ":" +
+    today.getMinutes() +
+    ":" +
+    today.getSeconds();
 
   if (!CandidateFileName.val()) {
-    if (CandidateFileName.parent().parent().parent().parent().next(".validation").length == 0) {
+    if (
+      CandidateFileName.parent().parent().parent().parent().next(".validation")
+        .length == 0
+    ) {
       // only add if not added
       CandidateFileName.parent()
         .parent()
@@ -565,14 +547,21 @@ $("#CarreerApplicationSubmit").click(function (e) {
     CandidateFileName.focus();
     focusSet = true;
   } else {
-    CandidateFileName.parent().parent().parent().parent().next(".validation").remove(); // remove it
+    CandidateFileName.parent()
+      .parent()
+      .parent()
+      .parent()
+      .next(".validation")
+      .remove(); // remove it
   }
 
   //First name
   if (!CandidateFName.val()) {
     if (CandidateFName.parent().next(".validation").length == 0) {
       // only add if not added
-      CandidateFName.parent().after("<div class='validation'>Please enter User Name</div>");
+      CandidateFName.parent().after(
+        "<div class='validation'>Please enter User Name</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     CandidateFName.focus();
@@ -583,7 +572,9 @@ $("#CarreerApplicationSubmit").click(function (e) {
   if (CandidateFName.val() && IsUsername(CandidateFName.val()) == false) {
     if (CandidateFName.parent().next(".validation").length == 0) {
       // only add if not added
-      CandidateFName.parent().after("<div class='validation'>Please enter Valid Name</div>");
+      CandidateFName.parent().after(
+        "<div class='validation'>Please enter Valid Name</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -597,7 +588,9 @@ $("#CarreerApplicationSubmit").click(function (e) {
   if (!CandidateLName.val()) {
     if (CandidateLName.parent().next(".validation").length == 0) {
       // only add if not added
-      CandidateLName.parent().after("<div class='validation'>Please enter Last Name</div>");
+      CandidateLName.parent().after(
+        "<div class='validation'>Please enter Last Name</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -610,7 +603,9 @@ $("#CarreerApplicationSubmit").click(function (e) {
   if (CandidateLName.val() && IsUsername(CandidateLName.val()) == false) {
     if (CandidateLName.parent().next(".validation").length == 0) {
       // only add if not added
-      CandidateLName.parent().after("<div class='validation'>Please enter Valid Name</div>");
+      CandidateLName.parent().after(
+        "<div class='validation'>Please enter Valid Name</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -624,7 +619,9 @@ $("#CarreerApplicationSubmit").click(function (e) {
   if (!CandidateEmail.val()) {
     if (CandidateEmail.parent().next(".validation").length == 0) {
       // only add if not added
-      CandidateEmail.parent().after("<div class='validation'>Please enter Email Address</div>");
+      CandidateEmail.parent().after(
+        "<div class='validation'>Please enter Email Address</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -637,7 +634,9 @@ $("#CarreerApplicationSubmit").click(function (e) {
   if (CandidateEmail.val() && IsEmail(CandidateEmail.val()) == false) {
     if (CandidateEmail.parent().next(".validation").length == 0) {
       // only add if not added
-      CandidateEmail.parent().after("<div class='validation'>Please enter Valid Email</div>");
+      CandidateEmail.parent().after(
+        "<div class='validation'>Please enter Valid Email</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -651,7 +650,9 @@ $("#CarreerApplicationSubmit").click(function (e) {
   if (!CandidatePhone.val()) {
     if (CandidatePhone.parent().next(".validation").length == 0) {
       // only add if not added
-      CandidatePhone.parent().after("<div class='validation'>Please enter Phone Number</div>");
+      CandidatePhone.parent().after(
+        "<div class='validation'>Please enter Phone Number</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -661,10 +662,15 @@ $("#CarreerApplicationSubmit").click(function (e) {
     CandidatePhone.parent().next(".validation").remove(); // remove it
   }
 
-  if (CandidatePhone.val() && validationPhonenum(CandidatePhone.val()) == false) {
+  if (
+    CandidatePhone.val() &&
+    validationPhonenum(CandidatePhone.val()) == false
+  ) {
     if (CandidatePhone.parent().next(".validation").length == 0) {
       // only add if not added
-      CandidatePhone.parent().after("<div class='validation'>Please enter valid Phone Number</div>");
+      CandidatePhone.parent().after(
+        "<div class='validation'>Please enter valid Phone Number</div>"
+      );
     }
     e.preventDefault(); // prevent form from POST to server
     if (!focusSet) {
@@ -673,17 +679,6 @@ $("#CarreerApplicationSubmit").click(function (e) {
   } else if (CandidatePhone.val() != "") {
     CandidatePhone.parent().next(".validation").remove(); // remove it
   }
-
-  // function validatePhone(txtPhonenum) {
-  //   var a = txtPhonenum;
-  //   var filter =
-  //     /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-  //   if (filter.test(a)) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
   // Firebase Form Name
   var strFormName = $(this).attr("data-form-name");
@@ -696,10 +691,7 @@ $("#CarreerApplicationSubmit").click(function (e) {
       CandidatePhone,
       CandidateLink1,
       datetime,
-      // CandidateLink2,
-      // CandidateLink3,
-      // CandidateLink4,
-      // CandidateLink5,
+
       strFormName
     )
   );
@@ -711,9 +703,9 @@ $("#CarreerApplicationSubmit").click(function (e) {
 
 // Configure your AWS SDK
 AWS.config.update({
-  region: "ap-south-1",
-  accessKeyId: "AKIATBCYQDVIAKFJZO6M",
-  secretAccessKey: "12pN1aj92FXZdncakEp7dLQ2XuepOpw0SwkMXPsU",
+  region: process.env.region,
+  accessKeyId: process.env.accessKeyId,
+  secretAccessKey: process.env.secretAccessKey,
 });
 
 // Create an S3 instance
@@ -726,21 +718,23 @@ async function fileUploadToS3(
   CandidatePhone,
   CandidateLink1,
   datetime,
-  // CandidateLink2,
-  // CandidateLink3,
-  // CandidateLink4,
-  // CandidateLink5,
+
   strFormName
 ) {
   const file = document.getElementById("file-input").files[0];
 
   if (file) {
-    var fileExtension = file.name.substr(file.name.lastIndexOf(".")).toLowerCase();
+    var fileExtension = file.name
+      .substr(file.name.lastIndexOf("."))
+      .toLowerCase();
     var fileName = file.name.replace(fileExtension, "");
 
     var d = new Date().toLocaleDateString("en-GB").replace(/\//g, "");
     var t = new Date().toLocaleTimeString().replace(/[^0-9]/g, "");
-    const key = `FileUpload/${fileName.replace(/[^\w.-]/g, "-")}-${d}${t}${fileExtension}`;
+    const key = `FileUpload/${fileName.replace(
+      /[^\w.-]/g,
+      "-"
+    )}-${d}${t}${fileExtension}`;
 
     fileExtension = fileExtension.replace(".", "");
 
@@ -795,8 +789,8 @@ async function fileUploadToS3(
 
               //Pushing Data to Firebase
               db.doc().set({
-                to: ["hr@addxp.com"],
-                bcc: ["marketing@addxp.com"],
+                to: [process.env.hrto],
+                bcc: [process.env.bcc],
                 message: {
                   subject: document.title,
                   text: "Welcome to the addxp",
@@ -842,7 +836,8 @@ async function fileUploadToS3(
 /* ============================ S3 Bucket: End ============================ */
 
 function IsEmail(email) {
-  var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var regex =
+    /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   if (!regex.test(email)) {
     return false;
   } else {

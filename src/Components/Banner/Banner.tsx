@@ -136,16 +136,21 @@ export default function Banner(props: any) {
     <section
       className='contact-banner'
       data-img-src={
-        strapi.strapihost + userDetails?.data.attributes.banner.data.attributes.backgroundImg.data.attributes.url
+        userDetails?.data.attributes.banner.data.attributes.backgroundImg.data == null
+          ? null
+          : strapi.strapihost + userDetails?.data.attributes.banner.data.attributes.backgroundImg.data.attributes.url
       }
     >
       <div className='container'>
         <div className='contact-main'>
-          <h1>{userDetails?.data.attributes.banner.data.attributes.Banner.Title}</h1>
-          <RichText htmlContent={userDetails?.data.attributes.banner.data.attributes.Banner.Description} />
-          {userDetails?.data.attributes.banner.data.attributes.BannerLink.href == null ? (
-            ""
-          ) : (
+          {userDetails?.data.attributes.banner.data.attributes.Banner.Title == null ? null : (
+            <h1>{userDetails?.data.attributes.banner.data.attributes.Banner.Title}</h1>
+          )}
+          {userDetails?.data.attributes.banner.data.attributes.Banner.Description == null ? null : (
+            <RichText htmlContent={userDetails?.data.attributes.banner.data.attributes.Banner.Description} />
+          )}
+
+          {userDetails?.data.attributes.banner.data.attributes.BannerLink.href == null ? null : (
             <>
               <Link href={userDetails?.data.attributes.banner.data.attributes.BannerLink.href} className='btn-defualt'>
                 {userDetails?.data.attributes.banner.data.attributes.BannerLink.label}

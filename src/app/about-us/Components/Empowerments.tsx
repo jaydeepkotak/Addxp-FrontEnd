@@ -28,23 +28,27 @@ export default function Empowerments() {
     fetchdata();
   }, []);
   return (
-    <section className="journey-component">
-      <div className="container">
-        <div className="journey-main">
-          <small>{userDetails?.data.attributes.Empowerments.Subtitle}</small>
-          <h5>{userDetails?.data.attributes.Empowerments.Title}</h5>
-          <RichText
-            htmlContent={userDetails?.data.attributes.Empowerments.Description}
-          ></RichText>
-          <img
-            src={
-              strapi.strapihost +
-              userDetails?.data.attributes.Empowerments.Images.data.attributes
-                .url
-            }
-            alt="journey-image"
-          />
-        </div>
+    <section className='journey-component'>
+      <div className='container'>
+        {userDetails?.data.attributes.Empowerments == null ? null : (
+          <div className='journey-main'>
+            {userDetails?.data.attributes.Empowerments.Subtitle == null ? null : (
+              <small>{userDetails?.data.attributes.Empowerments.Subtitle}</small>
+            )}
+            {userDetails?.data.attributes.Empowerments.Title == null ? null : (
+              <h5>{userDetails?.data.attributes.Empowerments.Title}</h5>
+            )}
+            {userDetails?.data.attributes.Empowerments.Description == null ? null : (
+              <RichText htmlContent={userDetails?.data.attributes.Empowerments.Description}></RichText>
+            )}
+            {userDetails?.data.attributes.Empowerments.Images.data == null ? null : (
+              <img
+                src={strapi.strapihost + userDetails?.data.attributes.Empowerments.Images.data.attributes.url}
+                alt='journey-image'
+              />
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

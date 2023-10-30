@@ -56,7 +56,6 @@ function TabMenu() {
                       >
                         <Link
                           href={`/blogs-insights/${childblogs.attributes.Blogs.Links.href}`}
-                          //as={`/blogs-insights/${childblogs.attributes.Blogs.Links.href}`}
                           className="latest-box"
                         >
                           <figure>

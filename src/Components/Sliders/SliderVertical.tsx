@@ -105,11 +105,7 @@ function SliderVertical(props: any) {
             i.to(Element, { borderColor: "#fff" }, index + 0.75);
           });
           // i.to(e[a], { borderColor: "#fff" }, a + 0.75);
-          i.to(
-            o.querySelector(".slider-left"),
-            { autoAlpha: 0, translateY: -350 },
-            a + 0.75
-          );
+          i.to(o.querySelector(".slider-left"), { autoAlpha: 0, translateY: -350 }, a + 0.75);
           i.to(o.querySelector(".slider-right"), { autoAlpha: 0 }, a + 0.75);
         }
       });
@@ -135,15 +131,13 @@ function SliderVertical(props: any) {
 
         if (indicator.style.borderColor === "rgb(233, 119, 119)") {
           if (t > 0) prevIndicator.classList.remove("scrolled");
-          if (t < indicators.length)
-            nextIndicator?.classList.remove("scrolled");
+          if (t < indicators.length) nextIndicator?.classList.remove("scrolled");
 
           t = indicators.length;
           indicators[0].classList.remove("scrolled");
           indicator.classList.add("scrolled");
 
-          if (indicators.length === 4 && t < 4)
-            nextIndicator?.classList.remove("scrolled");
+          if (indicators.length === 4 && t < 4) nextIndicator?.classList.remove("scrolled");
         }
       });
     };
@@ -155,70 +149,50 @@ function SliderVertical(props: any) {
     };
   }, []);
   return (
-    <section className="slider-verticle">
-      <div className="container">
-        <section className="philosophie">
-          <div className="philosophie-slider">
-            <div className="slider-top-desc">
-              <h5>
-                {
-                  userDetails?.data.attributes.verticle_slider.data.attributes
-                    .MainTitle.Title
-                }
-              </h5>
+    <section className='slider-verticle' id='slider-verticle'>
+      <div className='container'>
+        <section className='philosophie'>
+          <div className='philosophie-slider'>
+            <div className='slider-top-desc'>
+              <h5>{userDetails?.data.attributes.verticle_slider.data.attributes.MainTitle.Title}</h5>
               <RichText
-                htmlContent={
-                  userDetails?.data.attributes.verticle_slider.data.attributes
-                    .MainTitle.Description
-                }
+                htmlContent={userDetails?.data.attributes.verticle_slider.data.attributes.MainTitle.Description}
               ></RichText>
             </div>
-            <div className="wrapper">
-              <div className="indicators">
-                {userDetails?.data.attributes.verticle_slider.data.attributes.VerticalSlider.map(
-                  (item: any) => (
-                    <div className="indicator" key={item.id}>
-                      {item.TabTitle}
-                    </div>
-                  )
-                )}
+            <div className='wrapper'>
+              <div className='indicators'>
+                {userDetails?.data.attributes.verticle_slider.data.attributes.VerticalSlider.map((item: any) => (
+                  <div className='indicator' key={item.id}>
+                    {item.TabTitle}
+                  </div>
+                ))}
               </div>
-              {userDetails?.data.attributes.verticle_slider.data.attributes.VerticalSlider.map(
-                (subitem: any) => (
-                  <div className="point" key={subitem.id}>
-                    <div className="slider-main">
-                      <div className="slider-left">
-                        <div className="slider-v-desc">
-                          <RichText htmlContent={subitem.Title}></RichText>
-                          <RichText
-                            htmlContent={subitem.Description}
-                          ></RichText>
+              {userDetails?.data.attributes.verticle_slider.data.attributes.VerticalSlider.map((subitem: any) => (
+                <div className='point' key={subitem.id}>
+                  <div className='slider-main'>
+                    <div className='slider-left'>
+                      <div className='slider-v-desc'>
+                        <RichText htmlContent={subitem.Title}></RichText>
+                        <RichText htmlContent={subitem.Description}></RichText>
+                      </div>
+                    </div>
+                    <div className='slider-right'>
+                      <img
+                        src={strapi.strapihost + subitem.Images.data.attributes.url}
+                        alt={subitem.Images.data.attributes.alternativeText}
+                      />
+                      {subitem.SubTitle == null || subitem.SubDescription == null ? (
+                        ""
+                      ) : (
+                        <div className='figcaption'>
+                          <h6>{subitem.SubTitle}</h6>
+                          <RichText htmlContent={subitem.SubDescription}></RichText>
                         </div>
-                      </div>
-                      <div className="slider-right">
-                        <img
-                          src={
-                            strapi.strapihost +
-                            subitem.Images.data.attributes.url
-                          }
-                          alt={subitem.Images.data.attributes.alternativeText}
-                        />
-                        {subitem.SubTitle == null ||
-                        subitem.SubDescription == null ? (
-                          ""
-                        ) : (
-                          <div className="figcaption">
-                            <h6>{subitem.SubTitle}</h6>
-                            <RichText
-                              htmlContent={subitem.SubDescription}
-                            ></RichText>
-                          </div>
-                        )}
-                      </div>
+                      )}
                     </div>
                   </div>
-                )
-              )}
+                </div>
+              ))}
             </div>
           </div>
         </section>

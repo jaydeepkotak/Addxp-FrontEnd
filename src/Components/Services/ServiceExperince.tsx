@@ -75,20 +75,26 @@ export default function ServiceExperience(props: any) {
         }
       >
         <div className='container'>
-          <span className='tag-line'>
-            {userDetails?.data.attributes.service_experience.data.attributes.ComponentInfo.Title}
-          </span>
-          <h5>{userDetails?.data.attributes.service_experience.data.attributes.ComponentInfo.SubTitle}</h5>
-          <div className='row'>
-            {userDetails?.data.attributes.service_experience.data.attributes.ExperienceList.map((item: any) => (
-              <div className='col-md-4' key={item.id}>
-                <div className='strapi-item-box'>
-                  <div className='type6'>{item.Title}</div>
-                  <RichText htmlContent={item.Description}></RichText>
+          {userDetails?.data.attributes.service_experience.data.attributes.ComponentInfo.Title == null ? null : (
+            <span className='tag-line'>
+              {userDetails?.data.attributes.service_experience.data.attributes.ComponentInfo.Title}
+            </span>
+          )}
+          {userDetails?.data.attributes.service_experience.data.attributes.ComponentInfo.SubTitle == null ? null : (
+            <h5>{userDetails?.data.attributes.service_experience.data.attributes.ComponentInfo.SubTitle}</h5>
+          )}
+          {userDetails?.data.attributes.service_experience.data.attributes.ExperienceList == null ? null : (
+            <div className='row'>
+              {userDetails?.data.attributes.service_experience.data.attributes.ExperienceList.map((item: any) => (
+                <div className='col-md-4' key={item.id}>
+                  <div className='strapi-item-box'>
+                    {item.Title == null ? null : <div className='type6'>{item.Title}</div>}
+                    {item.Description == null ? null : <RichText htmlContent={item.Description}></RichText>}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>

@@ -67,27 +67,40 @@ export default function StrapiTitles(props: any) {
     <>
       {props.name == "/brand-guidelines" ? (
         <section className='brand-component'>
-          <div className='container'>
-            <div className='brand-main'>
-              <div className='brand-left'>
-                <div className='brand-top'>
-                  <h5>{userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Title}</h5>
-                  <RichText
-                    htmlContent={userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Description}
-                  ></RichText>
+          {userDetails?.data.attributes.strapi_title.data == null ? null : (
+            <div className='container'>
+              <div className='brand-main'>
+                <div className='brand-left'>
+                  <div className='brand-top'>
+                    {userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Title == null ? null : (
+                      <h5>{userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Title}</h5>
+                    )}
+                    {userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Description ==
+                    null ? null : (
+                      <RichText
+                        htmlContent={
+                          userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Description
+                        }
+                      ></RichText>
+                    )}
+                  </div>
+                  <BusinessGuidelines name={props.name} query={BRAND_TAGLINE("business")} />
                 </div>
-                <BusinessGuidelines name={props.name} query={BRAND_TAGLINE("business")} />
               </div>
             </div>
-          </div>
+          )}
         </section>
       ) : (
         <section className='strapi-quote-component'>
           <div className='container'>
-            <h5>{userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Title}</h5>
-            <RichText
-              htmlContent={userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Description}
-            ></RichText>
+            {userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Title == null ? null : (
+              <h5>{userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Title}</h5>
+            )}
+            {userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Description == null ? null : (
+              <RichText
+                htmlContent={userDetails?.data.attributes.strapi_title.data.attributes.StrapiTitle[0].Description}
+              ></RichText>
+            )}
           </div>
         </section>
       )}

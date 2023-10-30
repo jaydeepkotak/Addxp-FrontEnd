@@ -76,18 +76,23 @@ export default function DownloadForm(props: any) {
       <div className='container'>
         <div className='brand-tagline_bottom'>
           <div className='brand-tag-left'>
-            <img
-              src={
-                strapi.strapihost +
-                userDetails?.data.attributes.contact_form.data.attributes.Left.ImageData.ImageDesktop.data.attributes
-                  .url
-              }
-              alt={
-                userDetails?.data.attributes.contact_form.data.attributes.Left.ImageData.ImageDesktop.data.attributes
-                  .alternativeText
-              }
-            />
-            <h5>{userDetails?.data.attributes.contact_form.data.attributes.Left.Details.Title}</h5>
+            {userDetails?.data.attributes.contact_form.data.attributes.Left.ImageData.ImageDesktop.data ==
+            null ? null : (
+              <img
+                src={
+                  strapi.strapihost +
+                  userDetails?.data.attributes.contact_form.data.attributes.Left.ImageData.ImageDesktop.data.attributes
+                    .url
+                }
+                alt={
+                  userDetails?.data.attributes.contact_form.data.attributes.Left.ImageData.ImageDesktop.data.attributes
+                    .alternativeText
+                }
+              />
+            )}
+            {userDetails?.data.attributes.contact_form.data.attributes.Left.Details.Title == null ? null : (
+              <h5>{userDetails?.data.attributes.contact_form.data.attributes.Left.Details.Title}</h5>
+            )}
           </div>
           <div className='brand-tag-right'>
             <div className='brand-right'>

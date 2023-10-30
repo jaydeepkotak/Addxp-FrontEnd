@@ -215,7 +215,7 @@ header nav {
         min-width: calc(33.33% - 10px);
         padding: 20px;
         background-color: $black;
-        border-radius: 30px;
+        border-radius: 20px;
         transition: all 0.5s ease-in-out;
         position: relative;
         overflow: hidden;
@@ -492,6 +492,11 @@ header nav {
       .bi-chevron-down {
         margin-left: 10px;
         font-size: 14px;
+        @media (max-width: $tablet-breakpoint1) {
+          font-size: 30px;
+          color: #e97777;
+          transform: rotate(-90deg);
+        }
       }
       &.show {
         color: $white;
@@ -827,19 +832,18 @@ header nav {
             display: block;
 
             &:before {
-              @media (max-width: $tablet-breakpoint1) {
-                transform: rotate(-180deg);
-                position: relative;
-                position: relative;
-                color: $tag-color;
-                top: -5px;
-                left: -2px;
-                background: url(../../images/mobile-lisy-arrow.svg) no-repeat
-                  right center;
-                content: "";
-                width: 30px;
-                height: 30px;
-              }
+              transform: rotate(-180deg);
+              display: block;
+              position: relative;
+              position: relative;
+              color: $tag-color;
+              top: 7px;
+              left: -2px;
+              background: url(../../images/mobile-lisy-arrow.svg) no-repeat
+                right center;
+              content: "";
+              width: 30px;
+              height: 30px;
             }
           }
         }
@@ -1353,4 +1357,7 @@ body {
   .dropdown-menu.show {
     display: none;
   }
+}
+.navbar-toggler-icon {
+  display: none;
 }

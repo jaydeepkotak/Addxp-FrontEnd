@@ -39,32 +39,32 @@ export default function ContactForm(props: any) {
       if (props.name == "/contentstack-cms-services") {
         const response = await axios(config);
         setUserDetails(response.data.data.contentstackCmsService);
-        setId("contentstack-listing-form");
+        setId("connect-now");
       }
       if (props.name == "/contentful-cms-services") {
         const response = await axios(config);
         setUserDetails(response.data.data.contentfulCmsService);
-        setId("contentful-cms-services-form");
+        setId("connect-now");
       }
       if (props.name == "/umbraco-development-service") {
         const response = await axios(config);
         setUserDetails(response.data.data.umbracoDevelopmentService);
-        setId("umbraco-listing-form");
+        setId("connect-now");
       }
       if (props.name == "/strapi-cms-services") {
         const response = await axios(config);
         setUserDetails(response.data.data.strapiCmsService);
-        setId("strapi-listing-form");
+        setId("connect-now");
       }
       if (props.name == "/kentico-development-service") {
         const response = await axios(config);
         setUserDetails(response.data.data.kenticoDevelopmentService);
-        setId("kentico-listing-form");
+        setId("connect-now");
       }
       if (props.name == "/kontent-ai-development-service") {
         const response = await axios(config);
         setUserDetails(response.data.data.kontentAiDevelopmentService);
-        setId("kontent-ai-form");
+        setId("connect-now");
       }
       if (props.name == "/virto-commerce-services") {
         const response = await axios(config);
@@ -123,16 +123,19 @@ export default function ContactForm(props: any) {
         const response = await axios(config);
         setUserDetails(response.data.data.commerceExperience);
         setSectionClass("contact-form");
+        setId("connect-now");
       }
       if (props.name == "/content-experience") {
         const response = await axios(config);
         setUserDetails(response.data.data.contentExperience);
         setSectionClass("contact-form");
+        setId("connect-now");
       }
       if (props.name == "/user-experience") {
         const response = await axios(config);
         setUserDetails(response.data.data.userExperience);
         setSectionClass("contact-form");
+        setId("connect-now");
       }
     } catch (err) {
       console.log("ERROR DURING AXIOS REQUEST", err);

@@ -147,6 +147,18 @@ export default function SEOData(props: any) {
         const response = await axios(config);
         setUserDetails(response.data.data.thankYou);
       }
+      if (props.name == "/commerce-experience") {
+        const response = await axios(config);
+        setUserDetails(response.data.data.commerceExperience);
+      }
+      if (props.name == "/content-experience") {
+        const response = await axios(config);
+        setUserDetails(response.data.data.contentExperience);
+      }
+      if (props.name == "/user-experience") {
+        const response = await axios(config);
+        setUserDetails(response.data.data.userExperience);
+      }
 
       // if (props.name == pathname) {
       //   const response = await axios(config);

@@ -45,31 +45,44 @@ export default function StrapiServiceCard(props: any) {
     <>
       <section className='pluging-right-image-component'>
         <div className='container'>
-          <span className='tag-line'>{userDetails?.data.attributes.service_card.data.attributes.MainTitle.Title}</span>
-          <h5>{userDetails?.data.attributes.service_card.data.attributes.MainTitle.SubTitle}</h5>
+          {userDetails?.data.attributes.service_card.data.attributes.MainTitle.Title == null ? null : (
+            <span className='tag-line'>
+              {userDetails?.data.attributes.service_card.data.attributes.MainTitle.Title}
+            </span>
+          )}
+          {userDetails?.data.attributes.service_card.data.attributes.MainTitle.SubTitle == null ? null : (
+            <h5>{userDetails?.data.attributes.service_card.data.attributes.MainTitle.SubTitle}</h5>
+          )}
+
           <div className='row pluging-mian'>
             <div className='col-md-6'>
               <div className='pluging-box'>
-                <RichText
-                  htmlContent={userDetails?.data.attributes.service_card.data.attributes.Details.Body}
-                ></RichText>
-                <RichText
-                  htmlContent={userDetails?.data.attributes.service_card.data.attributes.Details.Summary}
-                ></RichText>
+                {userDetails?.data.attributes.service_card.data.attributes.Details.Body == null ? null : (
+                  <RichText
+                    htmlContent={userDetails?.data.attributes.service_card.data.attributes.Details.Body}
+                  ></RichText>
+                )}
+                {userDetails?.data.attributes.service_card.data.attributes.Details.Summary == null ? null : (
+                  <RichText
+                    htmlContent={userDetails?.data.attributes.service_card.data.attributes.Details.Summary}
+                  ></RichText>
+                )}
               </div>
             </div>
-            <div className='col-md-6'>
-              <img
-                src={
-                  strapi.strapihost +
-                  userDetails?.data.attributes.service_card.data.attributes.Details.Images.data.attributes.url
-                }
-                alt={
-                  userDetails?.data.attributes.service_card.data.attributes.Details.Images.data.attributes
-                    .alternativeTextl
-                }
-              />
-            </div>
+            {userDetails?.data.attributes.service_card.data.attributes.Details.Images.data == null ? null : (
+              <div className='col-md-6'>
+                <img
+                  src={
+                    strapi.strapihost +
+                    userDetails?.data.attributes.service_card.data.attributes.Details.Images.data.attributes.url
+                  }
+                  alt={
+                    userDetails?.data.attributes.service_card.data.attributes.Details.Images.data.attributes
+                      .alternativeTextl
+                  }
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>

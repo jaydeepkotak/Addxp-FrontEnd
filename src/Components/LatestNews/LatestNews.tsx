@@ -111,38 +111,55 @@ export default function LatestNews(props: any) {
   return (
     <>
       <section id='latest-news' className={sectionClass}>
-        <div className='container'>
-          <>
-            <div className='latest-top'>
-              <h5>{userDetails?.data.attributes.news_heading.data.attributes.NewsHeading.Title}</h5>
-              <RichText
-                htmlContent={userDetails?.data.attributes.news_heading.data.attributes.NewsHeading.Description}
-              ></RichText>
-            </div>
-            <div className='row'>
-              {userDetails?.data.attributes.blogs.data.map((item: any, i: any) => (
-                <div className='col-md-6' key={i}>
-                  <Link href={`/blogs-insights/${item.attributes.Blogs.Links.href}`} className='latest-box'>
-                    <figure>
-                      <img
-                        src={strapi.strapihost + item.attributes.Blogs.image.data.attributes.url}
-                        alt={item.attributes.Blogs.image.data.attributes.alternativeText}
-                      />
-                    </figure>
-                    <div className='latest-desc'>
-                      <div className='label'>{item.attributes.Blogs.tagLabel}</div>
-                      <div className='large'>{item.attributes.Blogs.Title}</div>
-                      <ul>
-                        <li>{moment(item.attributes.Blogs.Date).format("DD MMMM YYYY")}</li>
-                        <li>{item.attributes.Blogs.Creator}</li>
-                      </ul>
+        {userDetails?.data.attributes.news_heading.data == null ? null : (
+          <div className='container'>
+            <>
+              <div className='latest-top'>
+                {userDetails?.data.attributes.news_heading.data.attributes.NewsHeading.Title == null ? null : (
+                  <h5>{userDetails?.data.attributes.news_heading.data.attributes.NewsHeading.Title}</h5>
+                )}
+                {userDetails?.data.attributes.news_heading.data.attributes.NewsHeading.Description == null ? null : (
+                  <RichText
+                    htmlContent={userDetails?.data.attributes.news_heading.data.attributes.NewsHeading.Description}
+                  ></RichText>
+                )}
+              </div>
+              {userDetails?.data.attributes.blogs.data == null ? null : (
+                <div className='row'>
+                  {userDetails?.data.attributes.blogs.data.map((item: any, i: any) => (
+                    <div className='col-md-6' key={i}>
+                      <Link href={`/blogs-insights/${item.attributes.Blogs.Links.href}`} className='latest-box'>
+                        <figure>
+                          {item.attributes.Blogs.image.data == null ? null : (
+                            <img
+                              src={strapi.strapihost + item.attributes.Blogs.image.data.attributes.url}
+                              alt={item.attributes.Blogs.image.data.attributes.alternativeText}
+                            />
+                          )}
+                        </figure>
+                        <div className='latest-desc'>
+                          {item.attributes.Blogs.tagLabel == null ? null : (
+                            <div className='label'>{item.attributes.Blogs.tagLabel}</div>
+                          )}
+                          {item.attributes.Blogs.Title == null ? null : (
+                            <div className='large'>{item.attributes.Blogs.Title}</div>
+                          )}
+
+                          <ul>
+                            {item.attributes.Blogs.Date == null ? null : (
+                              <li>{moment(item.attributes.Blogs.Date).format("DD MMMM YYYY")}</li>
+                            )}
+                            {item.attributes.Blogs.Creator == null ? null : <li>{item.attributes.Blogs.Creator}</li>}
+                          </ul>
+                        </div>
+                      </Link>
                     </div>
-                  </Link>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </>
-        </div>
+              )}
+            </>
+          </div>
+        )}
       </section>
     </>
   );

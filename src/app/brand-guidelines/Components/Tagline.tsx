@@ -32,26 +32,26 @@ export default function Experience(props: any) {
     fetchdata();
   }, []);
   return (
-    <section className="brand-tagline">
-      <div className="container">
-        <div className="brand-box-main">
-          {userDetails?.data.attributes.brand_taglines.data.map((item: any) => (
-            <div className="brand-box" key={item.id}>
-              <RichText htmlContent={item.attributes.Description}></RichText>
+    <section className='brand-tagline'>
+      <div className='container'>
+        {userDetails?.data.attributes.brand_taglines.data == null ? null : (
+          <div className='brand-box-main'>
+            {userDetails?.data.attributes.brand_taglines.data.map((item: any) => (
+              <div className='brand-box' key={item.id}>
+                {item.attributes.Description == null ? null : (
+                  <RichText htmlContent={item.attributes.Description}></RichText>
+                )}
+                <ul>
+                  {item.attributes.Tagline.map((taglist: any) => (
+                    <li key={taglist.id}>{taglist.Title}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
 
-              <ul>
-                {item.attributes.Tagline.map((taglist: any) => (
-                  <li key={taglist.id}>{taglist.Title}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <DownloadForm
-          name={pathname}
-          query={CONTACT_FORM_TITLE_QUERY("brandGuideline")}
-        />
+        <DownloadForm name={pathname} query={CONTACT_FORM_TITLE_QUERY("brandGuideline")} />
       </div>
     </section>
   );

@@ -73,7 +73,9 @@ export default function Email(props: any) {
   useEffect(() => {
     fetchdata();
     setTimeout(() => {
-      const elements = document.getElementsByClassName("consultaion-main banner-js");
+      const elements = document.getElementsByClassName(
+        "consultaion-main banner-js"
+      );
       if (elements.length === 0) {
         return;
       }
@@ -121,24 +123,36 @@ export default function Email(props: any) {
   };
 
   return (
-    <section className='consultaion-component'>
-      <div className='container'>
+    <section className="consultaion-component">
+      <div className="container">
         <div
-          className='consultaion-main banner-js'
+          className="consultaion-main banner-js"
           data-img-src={
-            strapi.strapihost + userDetails?.data.attributes.form_title.data.attributes.Form.Images.data.attributes.url
+            strapi.strapihost +
+            userDetails?.data.attributes.form_title.data.attributes.Form.Images
+              .data.attributes.url
           }
         >
-          <div className='consultaion-desc'>
-            <h5>{userDetails?.data.attributes.form_title.data.attributes.Form.Title}</h5>
-            <RichText htmlContent={userDetails?.data.attributes.form_title.data.attributes.Form.Description}></RichText>
-            <div className='search-container'>
+          <div className="consultaion-desc">
+            <h5>
+              {
+                userDetails?.data.attributes.form_title.data.attributes.Form
+                  .Title
+              }
+            </h5>
+            <RichText
+              htmlContent={
+                userDetails?.data.attributes.form_title.data.attributes.Form
+                  .Description
+              }
+            ></RichText>
+            <div className="search-container">
               <form onSubmit={handleSubmit}>
                 <input
-                  type='email'
-                  id='CTAEmailID'
-                  placeholder='Enter Your Business Email'
-                  name='Email'
+                  type="email"
+                  id="CTAEmailID"
+                  placeholder="Enter Your Business Email"
+                  name="Email"
                   //validationMessage="Please enter Business Emaiil ID"
                   //autocomplete="off"
                   //value={formData.fieldName}
@@ -146,9 +160,10 @@ export default function Email(props: any) {
                   required
                 />
                 <button
-                  type='submit'
-                  data-form-name='ConsultationFormData'
-                  className='btn btn-primary btn-block submit-btn'
+                  type="submit"
+                  id="BtnSubscribe"
+                  data-form-name="ConsultationFormData"
+                  className="btn btn-primary btn-block submit-btn"
                 >
                   submit
                 </button>

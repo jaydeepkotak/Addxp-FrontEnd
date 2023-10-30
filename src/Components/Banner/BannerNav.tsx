@@ -44,13 +44,13 @@ export default function BannerNav(props: any) {
   return (
     <div className='tab-menu'>
       <div className='container'>
-        <ul>
-          {userDetails?.data.attributes.banner_navigation.data.attributes.NavLink.map((item: any) => (
-            <li key={item.id}>
-              <Link href={item.href}>{item.label}</Link>
-            </li>
-          ))}
-        </ul>
+        {userDetails?.data.attributes.banner_navigation == null ? null : (
+          <ul>
+            {userDetails?.data.attributes.banner_navigation.data.attributes.NavLink.map((item: any) => (
+              <li key={item.id}>{item.href == null ? null : <Link href={item.href}>{item.label}</Link>}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

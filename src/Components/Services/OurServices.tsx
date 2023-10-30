@@ -7,6 +7,7 @@ import Link from "next/link";
 
 export default function OurServices(props: any) {
   const [userDetails, setUserDetails] = useState<UserData>();
+  const [id, setId] = useState("");
   const config: AxiosRequestConfig = {
     method: "POST",
     url: strapi.strapigraphql,
@@ -72,65 +73,60 @@ export default function OurServices(props: any) {
       {props.name === "/strapi-cms-development-service" ||
       props.name === "/strapi-cms-consultation-service" ||
       props.name === "/strapi-support-maintenance-service" ? (
-        <section className="strapi-services-component">
-          <div className="container">
-            <span className="tag-line">
-              {
-                userDetails?.data.attributes.our_service.data.attributes
-                  .ComponentInfo.Title
-              }
-            </span>
-            <h5>
-              {
-                userDetails?.data.attributes.our_service.data.attributes
-                  .ComponentInfo.SubTitle
-              }
-            </h5>
-            <div className="row">
-              {userDetails?.data.attributes.our_service.data.attributes.ServiceList.map(
-                (item: any) => (
-                  <div className="col-md-4" key={item.id}>
-                    <div className="strapi-service-box">
-                      <RichText htmlContent={item.Body}></RichText>
-                      <RichText htmlContent={item.Summary}></RichText>
+        <section className='strapi-services-component'>
+          <div className='container'>
+            {userDetails?.data.attributes.our_service.data.attributes.ComponentInfo.Title == null ? null : (
+              <span className='tag-line'>
+                {userDetails?.data.attributes.our_service.data.attributes.ComponentInfo.Title}
+              </span>
+            )}
+            {userDetails?.data.attributes.our_service.data.attributes.ComponentInfo.SubTitle == null ? null : (
+              <h5>{userDetails?.data.attributes.our_service.data.attributes.ComponentInfo.SubTitle}</h5>
+            )}
+            {userDetails?.data.attributes.our_service.data.attributes.ServiceList == null ? null : (
+              <div className='row'>
+                {userDetails?.data.attributes.our_service.data.attributes.ServiceList.map((item: any) => (
+                  <div className='col-md-4' key={item.id}>
+                    <div className='strapi-service-box'>
+                      {item.Body == null ? null : <RichText htmlContent={item.Body}></RichText>}
+                      {item.Summary == null ? null : <RichText htmlContent={item.Summary}></RichText>}
                     </div>
                   </div>
-                )
-              )}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       ) : (
-        <section className="three-item-component">
-          <div className="container">
-            <span className="tag-line">
-              {
-                userDetails?.data.attributes.our_service.data.attributes
-                  .ComponentInfo.Title
-              }
-            </span>
-            <h5>
-              {
-                userDetails?.data.attributes.our_service.data.attributes
-                  .ComponentInfo.SubTitle
-              }
-            </h5>
-            <div className="row">
-              {userDetails?.data.attributes.our_service.data.attributes.ServiceList.map(
-                (item: any) => (
-                  <div className="col-md-4" key={item.id}>
-                    <Link href={item.Links.href} className="three-item-box">
-                      <div className="large">
-                        <RichText htmlContent={item.Body}></RichText>
-                      </div>
-                      <RichText htmlContent={item.Summary}></RichText>
-                      <span className="btn-defualt">{item.Links.label}</span>
-                    </Link>
-                  </div>
-                )
+        <section className='three-item-component'>
+          {userDetails?.data.attributes.our_service == null ? null : (
+            <div className='container'>
+              {userDetails?.data.attributes.our_service.data.attributes.ComponentInfo.Title == null ? null : (
+                <span className='tag-line'>
+                  {userDetails?.data.attributes.our_service.data.attributes.ComponentInfo.Title}
+                </span>
               )}
+              {userDetails?.data.attributes.our_service.data.attributes.ComponentInfo.SubTitle == null ? null : (
+                <h5>{userDetails?.data.attributes.our_service.data.attributes.ComponentInfo.SubTitle}</h5>
+              )}
+
+              <div className='row'>
+                {userDetails?.data.attributes.our_service.data.attributes.ServiceList.map((item: any) => (
+                  <div className='col-md-4' key={item.id}>
+                    {item.Link.href == null ? null : (
+                      <Link href={item.Links.href} className='three-item-box'>
+                        <div className='large'>
+                          {item.Body == null ? null : <RichText htmlContent={item.Body}></RichText>}
+                        </div>
+                        {item.Summary == null ? null : <RichText htmlContent={item.Summary}></RichText>}
+                        <span className='btn-defualt'>{item.Links.label}</span>
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </section>
       )}
     </>

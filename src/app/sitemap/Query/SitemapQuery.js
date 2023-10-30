@@ -89,6 +89,16 @@ query{
           href
           label
         }
+       	SolutionTitle
+        SolutionLinks{
+          id
+          Links{
+            id
+            href
+            label
+          }
+          Class
+        }
       }
     }
   }

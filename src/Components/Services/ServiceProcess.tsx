@@ -39,6 +39,30 @@ export default function ServiceProcess(props: any) {
   }, []);
   return (
     <section className='services-process-wrapper'>
+      {userDetails?.data.attributes.services_process == null ? null : (
+        <div className='container'>
+          <span className='tag-line'>
+            {userDetails?.data.attributes.services_process.data.attributes.ServiceTitle.Title}
+          </span>
+          <h5> {userDetails?.data.attributes.services_process.data.attributes.ServiceTitle.SubTitle}</h5>
+
+          <div className='services-process-wrapper_list'>
+            {userDetails?.data.attributes.services_process.data.attributes.ServiceList.map((item: any) => (
+              <div className='list_item' key={item.id}>
+                <div className='list_item_title'>
+                  <img
+                    src={strapi.strapihost + item.Image.data.attributes.url}
+                    alt={item.Image.data.attributes.alternativeText}
+                  />
+                  <span>{item.Title}</span>
+                </div>
+
+                <RichText htmlContent={item.Description}></RichText>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       <div className='container'>
         <span className='tag-line'>
           {userDetails?.data.attributes.services_process.data.attributes.ServiceTitle.Title}

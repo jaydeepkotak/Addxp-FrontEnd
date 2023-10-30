@@ -90,24 +90,38 @@ export default function ServiceExperience(props: any) {
       <section className='feature-component'>
         <div className='container'>
           <div className='feature-bg'>
-            <h5>{userDetails?.data.attributes.experience.data.attributes.ServiceTitle.Title}</h5>
-            <p>{userDetails?.data.attributes.experience.data.attributes.ServiceTitle.SubTitle}</p>
-            <div className='row'>
-              {userDetails?.data.attributes.experience.data.attributes.Experience.map((item: any) => (
-                <div className='col-md-6' key={item.id}>
-                  <div className='feature-list'>
-                    <img
-                      src={strapi.strapihost + item.Images.data[0].attributes.url}
-                      alt={item.Images.data[0].attributes.alternativeText}
-                    />
-                    <div className='feature-desc'>
-                      <div className='type2'>{item.Title}</div>
-                      <RichText htmlContent={item.Description}></RichText>
+            {userDetails?.data.attributes.experience.data.attributes.ServiceTitle.Title == null ? null : (
+              <h5>{userDetails?.data.attributes.experience.data.attributes.ServiceTitle.Title}</h5>
+            )}
+            {userDetails?.data.attributes.experience.data.attributes.ServiceTitle.SubTitle == null ? null : (
+              <p>{userDetails?.data.attributes.experience.data.attributes.ServiceTitle.SubTitle}</p>
+            )}
+            {userDetails?.data.attributes.experience.data.attributes.Experience == null ? null : (
+              <div className='row'>
+                {userDetails?.data.attributes.experience.data.attributes.Experience.map((item: any) => (
+                  <div className='col-md-6' key={item.id}>
+                    {item.Images.data == null ? null : (
+                      <img
+                        src={strapi.strapihost + item.Images.data[0].attributes.url}
+                        alt={item.Images.data[0].attributes.alternativeText}
+                      />
+                    )}
+                    <div className='feature-list'>
+                      {item.Images.data == null ? null : (
+                        <img
+                          src={strapi.strapihost + item.Images.data[0].attributes.url}
+                          alt={item.Images.data[0].attributes.alternativeText}
+                        />
+                      )}
+                      <div className='feature-desc'>
+                        {item.Title == null ? null : <div className='type2'>{item.Title}</div>}
+                        {item.Description == null ? null : <RichText htmlContent={item.Description}></RichText>}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>

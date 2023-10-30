@@ -37,6 +37,7 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 export default function Home() {
   const [userDetails, setUserDetails] = useState<UserData>();
   const pathname = usePathname();
+
   useEffect(() => {
     setTimeout(() => {
       /* Main navigation */
@@ -107,29 +108,29 @@ export default function Home() {
   return (
     <>
       <SEOData name={pathname} query={SEO("home")} />
-      <section id="panels" className="slidePanles_Container">
-        <div id="panels-container" style={{ width: "400%" }}>
+      <section id='panels' className='slidePanles_Container'>
+        <div id='panels-container' style={{ width: "400%" }}>
           {userDetails?.data.attributes.carousel.data.attributes.Carousel.map(
             (item: any) => (
               <article
                 id={item.ArticleId.replaceAll("_", "-")}
-                className="panel full-screen"
+                className='panel full-screen'
                 key={item.id}
               >
-                <div className="horizontal-scroll-section">
-                  <div className="scene">
-                    <div className="horizontal-scroll-section__content-wrapper wrapper">
+                <div className='horizontal-scroll-section'>
+                  <div className='scene'>
+                    <div className='horizontal-scroll-section__content-wrapper wrapper'>
                       <div
-                        className="horizontal-scroll-section__content-section banner-js"
+                        className='horizontal-scroll-section__content-section banner-js'
                         data-img-src={
                           strapi.strapihost +
                           item.DesktopImg.data.attributes.url
                         }
                       >
-                        <div className="container">
-                          <div className="banner-main">
-                            <div className="banner-left">
-                              <h1 className="d-none">
+                        <div className='container'>
+                          <div className='banner-main'>
+                            <div className='banner-left'>
+                              <h1 className='d-none'>
                                 Digital Experience Solution
                               </h1>
 
@@ -144,20 +145,20 @@ export default function Home() {
                               ) : (
                                 <a
                                   href={item.Links[0].href}
-                                  className="btn-defualt"
+                                  className='btn-defualt'
                                 >
                                   {item.Links[0].label}
                                 </a>
                               )}
                             </div>
 
-                            <div className="banner-right mobile-banner-right">
+                            <div className='banner-right mobile-banner-right'>
                               <img
                                 src={
                                   strapi.strapihost +
                                   item.MobileImg.data[0].attributes.url
                                 }
-                                alt="banner-mobile1"
+                                alt='banner-mobile1'
                               />
                             </div>
                           </div>
@@ -174,41 +175,41 @@ export default function Home() {
       </section>
       <XComponent />
       <SliderVertical name={pathname} query={VERTICAL_SLIDER("home")} />
-      <section className="navigate-component">
-        <div className="">
+      <section className='navigate-component'>
+        <div className=''>
           <h5>Navigate our website</h5>
 
-          <div className="navigate-main">
-            <div className="navigate-items">
+          <div className='navigate-main'>
+            <div className='navigate-items'>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
-              <a href="contentful-cms-services" className="fadeout-images">
+              <a href='contentful-cms-services' className='fadeout-images'>
                 <Image
                   src={
                     strapi.strapihost +
@@ -216,484 +217,484 @@ export default function Home() {
                   }
                   width={0}
                   height={0}
-                  alt="contentful-text"
-                  className="circle"
+                  alt='contentful-text'
+                  className='circle'
                 />
               </a>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
             </div>
 
-            <div className="navigate-items">
+            <div className='navigate-items'>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
-              <a href="strapi-cms-services" className="fadeout-images">
+              <a href='strapi-cms-services' className='fadeout-images'>
                 <Image
                   src={
                     strapi.strapihost + "/uploads/strapi_text_2c75e0c375.svg"
                   }
                   width={0}
                   height={0}
-                  alt="strapi-text"
-                  className="circle"
+                  alt='strapi-text'
+                  className='circle'
                 />
               </a>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
             </div>
 
-            <div className="navigate-items">
+            <div className='navigate-items'>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
-              <a href="umbraco-development-service" className="fadeout-images">
+              <a href='umbraco-development-service' className='fadeout-images'>
                 <Image
                   src={strapi.strapihost + "/uploads/umbraco_3581870810.svg"}
                   width={0}
                   height={0}
-                  alt="umbraco"
-                  className="circle"
+                  alt='umbraco'
+                  className='circle'
                 />
               </a>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
             </div>
 
-            <div className="navigate-items">
+            <div className='navigate-items'>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
             </div>
 
-            <div className="navigate-items">
+            <div className='navigate-items'>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
-              <a href="virto-commerce-services" className="fadeout-images">
+              <a href='virto-commerce-services' className='fadeout-images'>
                 <Image
                   src={
                     strapi.strapihost +
@@ -701,161 +702,161 @@ export default function Home() {
                   }
                   width={0}
                   height={0}
-                  alt="virto-commerce-text"
-                  className="circle"
+                  alt='virto-commerce-text'
+                  className='circle'
                 />
               </a>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
             </div>
 
-            <div className="navigate-items">
+            <div className='navigate-items'>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
-              <a href="contentstack-cms-services" className="fadeout-images">
+              <a href='contentstack-cms-services' className='fadeout-images'>
                 <Image
                   src={
                     strapi.strapihost +
@@ -863,269 +864,269 @@ export default function Home() {
                   }
                   width={0}
                   height={0}
-                  alt="contentstack-text"
-                  className="circle"
+                  alt='contentstack-text'
+                  className='circle'
                 />
               </a>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
             </div>
 
-            <div className="navigate-items">
+            <div className='navigate-items'>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
-              <a href="kentico-development-service" className="fadeout-images">
+              <a href='kentico-development-service' className='fadeout-images'>
                 <Image
                   src={strapi.strapihost + "/uploads/kentico_fb8eb67ef7.svg"}
                   width={0}
                   height={0}
-                  alt="kentico"
-                  className="circle"
+                  alt='kentico'
+                  className='circle'
                 />
               </a>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
             </div>
 
-            <div className="navigate-items">
+            <div className='navigate-items'>
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
               <Image
                 src={strapi.strapihost + "/uploads/add_XP_logo_2d9bf8ee4f.svg"}
                 width={0}
                 height={0}
-                alt="logo"
-                className="circle"
+                alt='logo'
+                className='circle'
               />
             </div>
           </div>

@@ -40,30 +40,41 @@ export default function DevelopmentProcess(props: any) {
   return (
     <>
       <section className='development-process-component strapi-up-process'>
-        <div className='container'>
-          <span className='tag-line'>
-            {userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Title}
-          </span>
-          <h5>{userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Subtitle}</h5>
-          <RichText
-            htmlContent={userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Description}
-          ></RichText>
-          <div className='development-box'>
-            <ul>
-              {userDetails?.data.attributes.process_title.data.attributes.development_process.data.attributes.Details.map(
-                (item: any) => (
-                  <li key={item.id}>
-                    <span>
-                      <RichText htmlContent={item.Description}></RichText>
-                    </span>
+        {userDetails?.data.attributes.process_title == null ? null : (
+          <div className='container'>
+            {userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Title == null ? null : (
+              <span className='tag-line'>
+                {userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Title}
+              </span>
+            )}
+            {userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Subtitle == null ? null : (
+              <h5>{userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Subtitle}</h5>
+            )}
+            {userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Description == null ? null : (
+              <RichText
+                htmlContent={userDetails?.data.attributes.process_title.data.attributes.ProcessTitle.Description}
+              ></RichText>
+            )}
 
-                    <img src={strapi.strapihost + item.Images.data.attributes.url} alt='list-number1' />
-                  </li>
-                )
+            <div className='development-box'>
+              {userDetails?.data.attributes.process_title.data.attributes.development_process.data.attributes.Details ==
+              null ? null : (
+                <ul>
+                  {userDetails?.data.attributes.process_title.data.attributes.development_process.data.attributes.Details.map(
+                    (item: any) => (
+                      <li key={item.id}>
+                        <span>
+                          <RichText htmlContent={item.Description}></RichText>
+                        </span>
+                        <img src={strapi.strapihost + item.Images.data.attributes.url} alt='list-number1' />
+                      </li>
+                    )
+                  )}
+                </ul>
               )}
-            </ul>
+            </div>
           </div>
-        </div>
+        )}
       </section>
     </>
   );

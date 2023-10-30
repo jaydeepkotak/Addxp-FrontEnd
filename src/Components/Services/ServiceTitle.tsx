@@ -54,55 +54,52 @@ export default function ServiceTitle(props: any) {
     fetchdata();
   }, []);
   return (
-    <section className="strapi-half-image">
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-md-6">
-            <div className="strapi-left">
-              <span className="tag-line">
-                {
-                  userDetails?.data.attributes.service_title.data.attributes
-                    .ServiceTitle.Title
-                }
-              </span>
-              <h5>
-                <RichText
-                  htmlContent={
-                    userDetails?.data.attributes.service_title.data.attributes
-                      .ServiceTitle.Description
-                  }
-                ></RichText>
-              </h5>
-              <RichText
-                htmlContent={
-                  userDetails?.data.attributes.service_title.data.attributes
-                    .ServiceTitle.Body
-                }
-              ></RichText>
+    <section className='strapi-half-image'>
+      {userDetails?.data.attributes.service_title.data.attributes.ServiceTitle == null ? null : (
+        <div className='container'>
+          <div className='row align-items-center'>
+            <div className='col-md-6'>
+              <div className='strapi-left'>
+                {userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Title == null ? null : (
+                  <span className='tag-line'>
+                    {userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Title}
+                  </span>
+                )}
+                {userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Description == null ? null : (
+                  <h5>
+                    <RichText
+                      htmlContent={userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Description}
+                    ></RichText>
+                  </h5>
+                )}
+                {userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Body == null ? null : (
+                  <RichText
+                    htmlContent={userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Body}
+                  ></RichText>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="col-md-6">
-            <div className="strapi-right">
-              <img
-                className="w-auto"
-                src={
-                  strapi.strapihost +
-                  userDetails?.data.attributes.service_title.data.attributes
-                    .ServiceTitle.Images.data[0].attributes.url
-                }
-                alt={
-                  userDetails?.data.attributes.service_title.data.attributes
-                    .ServiceTitle.Images.data[0].attributes.alternativeText
-                }
-              />
-              {
-                userDetails?.data.attributes.service_title.data.attributes
-                  .ServiceTitle.Images.data[0].attributes.alternativeText
-              }
+            <div className='col-md-6'>
+              {userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Images.data[0] == null ? null : (
+                <div className='strapi-right'>
+                  <img
+                    className='w-auto'
+                    src={
+                      strapi.strapihost +
+                      userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Images.data[0].attributes
+                        .url
+                    }
+                    alt={
+                      userDetails?.data.attributes.service_title.data.attributes.ServiceTitle.Images.data[0].attributes
+                        .alternativeText
+                    }
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

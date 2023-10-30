@@ -74,27 +74,31 @@ export default function StrapiRelatedServices(props: any) {
     <>
       <section className='two-service-component'>
         <div className='container'>
-          <h5>
-            {userDetails?.data.attributes.service_title.data.attributes.StrapiTitle[0].Title}
-            {/* {
-              userDetails?.data.attributes.related_services.data[0].attributes
-                .Title.Title
-            } */}
-          </h5>
-          <RichText
-            htmlContent={userDetails?.data.attributes.service_title.data.attributes.StrapiTitle[0].Description}
-          ></RichText>
+          {userDetails?.data.attributes.service_title.data.attributes.StrapiTitle[0].Title == null ? null : (
+            <h5>{userDetails?.data.attributes.service_title.data.attributes.StrapiTitle[0].Title}</h5>
+          )}
+          {userDetails?.data.attributes.service_title.data.attributes.StrapiTitle[0].Description == null ? null : (
+            <RichText
+              htmlContent={userDetails?.data.attributes.service_title.data.attributes.StrapiTitle[0].Description}
+            ></RichText>
+          )}
+
           <div className='row'>
             {userDetails?.data.attributes.related_services.data.map((item: any) => (
               // eslint-disable-next-line react/jsx-key
               <div className='col-md-6' key={item.id}>
                 <div className='two-service-bg'>
-                  <RichText htmlContent={item.attributes.ServiceDetails.Body}></RichText>
-                  <RichText htmlContent={item.attributes.ServiceDetails.Summary}></RichText>
-
-                  <Link href={`${item.attributes.ServiceDetails.Links.href}`} className='btn-defualt'>
-                    {item.attributes.ServiceDetails.Links.label}
-                  </Link>
+                  {item.attributes.ServiceDetails.Body == null ? null : (
+                    <RichText htmlContent={item.attributes.ServiceDetails.Body}></RichText>
+                  )}
+                  {item.attributes.ServiceDetails.Summary == null ? null : (
+                    <RichText htmlContent={item.attributes.ServiceDetails.Summary}></RichText>
+                  )}
+                  {item.attributes.ServiceDetails.Links == null ? null : (
+                    <Link href={`${item.attributes.ServiceDetails.Links.href}`} className='btn-defualt'>
+                      {item.attributes.ServiceDetails.Links.label}
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}

@@ -29,12 +29,16 @@ export default function BuisinessGuidelines(props: any) {
   }, []);
   return (
     <div className='brand-bottom'>
-      <RichText htmlContent={userDetails?.data.attributes.business.data.attributes.Description}></RichText>
-      <ul>
-        {userDetails?.data.attributes.business.data.attributes.Tagline.map((item: any) => (
-          <li key={item.id}>{item.Title}</li>
-        ))}
-      </ul>
+      {userDetails?.data.attributes.business.data.attributes.Description == null ? null : (
+        <RichText htmlContent={userDetails?.data.attributes.business.data.attributes.Description}></RichText>
+      )}
+      {userDetails?.data.attributes.business.data.attributes.Tagline == null ? null : (
+        <ul>
+          {userDetails?.data.attributes.business.data.attributes.Tagline.map((item: any) => (
+            <li key={item.id}>{item.Title}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

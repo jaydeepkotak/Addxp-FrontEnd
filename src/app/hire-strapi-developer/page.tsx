@@ -35,38 +35,19 @@ export default function Hirestrapideveloper() {
       <SEOData name={pathname} query={SEO("hireStrapiDeveloper")} />
 
       <Banner name={pathname} query={BANNER_QUERY("hireStrapiDeveloper")} />
-      <StrapiResources
-        name={pathname}
-        query={INNOVATIONS("hireStrapiDeveloper")}
-      />
-      <ServicesDetails
-        name={pathname}
-        query={SERVICES_DETILS_QUERY("hireStrapiDeveloper")}
-      />
+
+      <StrapiResources name={pathname} query={INNOVATIONS("hireStrapiDeveloper")} />
       <OwlTabSlider />
-      <Email name={pathname} query={FORM_TITLE_QUERY("hireStrapiDeveloper")} />
       <CTA name={pathname} query={CTA_QUERY("hireStrapiDeveloper")} />
       <EngagementModel />
       <Availability />
-      <SliderVertical
-        name={pathname}
-        query={VERTICAL_SLIDER("hireStrapiDeveloper")}
-      />
+      <SliderVertical name={pathname} query={VERTICAL_SLIDER("hireStrapiDeveloper")} />
       <Email name={pathname} query={FORM_TITLE_QUERY("hireStrapiDeveloper")} />
-      <ServicesDetails
-        name={pathname}
-        query={SERVICES_DETILS_QUERY("hireStrapiDeveloper")}
-      />
+      <ServicesDetails name={pathname} query={SERVICES_DETILS_QUERY("hireStrapiDeveloper")} />
       <FAQS name={pathname} query={FAQ("hireStrapiDeveloper")} />
-      <StrapiRelatedServices
-        name={pathname}
-        query={STRAPI_RELATED_SERVICES("hireStrapiDeveloper")}
-      />
+      <StrapiRelatedServices name={pathname} query={STRAPI_RELATED_SERVICES("hireStrapiDeveloper")} />
       <LatestNews name={pathname} query={LATEST_NEWS("hireStrapiDeveloper")} />
-      <ContactForm
-        name={pathname}
-        query={CONTACT_FORM_TITLE_QUERY("hireStrapiDeveloper")}
-      />
+      <ContactForm name={pathname} query={CONTACT_FORM_TITLE_QUERY("hireStrapiDeveloper")} />
     </>
   );
 }

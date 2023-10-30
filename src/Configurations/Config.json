@@ -1,4 +1,4 @@
 {
-  "strapihost": "http://localhost:1337",
-  "strapigraphql": "http://localhost:1337/graphql"
+  "strapihost": "http://ec2-3-21-188-215.us-east-2.compute.amazonaws.com",
+  "strapigraphql": "http://ec2-3-21-188-215.us-east-2.compute.amazonaws.com/graphql"
 }

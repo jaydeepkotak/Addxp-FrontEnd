@@ -8,10 +8,8 @@ import { BLOGS_DETAILS } from "@/Configurations/CommonQuery";
 import Link from "next/link";
 import moment from "moment";
 import SEOData from "@/Components/SEO/SEOData";
-import { SEO } from "@/Configurations/SEOQuery";
 
 function SlugPage() {
-  const pathname = usePathname();
   const [userDetails, setUserDetails] = useState<UserData>();
   const searchParams = useParams();
   const parameters = searchParams.blogdetails;
@@ -71,7 +69,7 @@ function SlugPage() {
       <div id="progress" style={{ width: "0" }}></div>
       {userDetails?.data.map((item: any) => (
         <>
-          <section className="blog-detail-banner">
+          <section className="blog-detail-banner" key={item.id}>
             <div className="container">
               <div className="blog-detail-main">
                 <div className="blog-detail-left">

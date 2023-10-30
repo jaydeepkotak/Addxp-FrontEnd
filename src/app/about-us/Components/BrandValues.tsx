@@ -29,29 +29,29 @@ export default function BrandValues() {
     fetchdata();
   }, []);
   return (
-    <section className="what-we-compoent" id="brand-values">
-      <div className="container">
-        {userDetails?.data.attributes.brand_value.data.attributes.BrandValues.map(
-          (item: any) => (
-            <div className="row align-items-center black-bg" key={item.id}>
-              <div className="col-md-5">
-                <div className="weekday-desc">
-                  <span className="tag-line">{item.SubTitle}</span>
-                  <h5>{item.Title}</h5>
-                  <RichText htmlContent={item.Body}></RichText>
+    <section className='what-we-compoent' id='brand-values'>
+      {userDetails?.data.attributes.brand_value.data.attributes.BrandValues == null ? null : (
+        <div className='container'>
+          {userDetails?.data.attributes.brand_value.data.attributes.BrandValues.map((item: any) => (
+            <div className='row align-items-center black-bg' key={item.id}>
+              <div className='col-md-5'>
+                <div className='weekday-desc'>
+                  {item.SubTitle == null ? null : <span className='tag-line'>{item.SubTitle}</span>}
+                  {item.Title == null ? null : <h5>{item.Title}</h5>}
+                  {item.Body == null ? null : <RichText htmlContent={item.Body}></RichText>}
                 </div>
               </div>
-              <div className="col-md-7">
-                <div className="quote-image">
-                  <img
-                    src={strapi.strapihost + item.Images.data[0].attributes.url}
-                  />
+              <div className='col-md-7'>
+                <div className='quote-image'>
+                  {item.Images.data == null ? null : (
+                    <img src={strapi.strapihost + item.Images.data[0].attributes.url} />
+                  )}
                 </div>
               </div>
             </div>
-          )
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

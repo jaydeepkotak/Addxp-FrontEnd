@@ -1,6 +1,5 @@
 "use client";
 import { usePathname } from "next/navigation";
-import ServiceTitle from "../../Components/Services/ServiceTitle";
 import CTA from "@/Components/CTA/CTA";
 import ServiceExperience from "@/Components/Services/ServiceExperince";
 import {
@@ -9,10 +8,13 @@ import {
   FAQ,
   FORM_TITLE_QUERY,
   LATEST_NEWS,
+  SERVICEEXPERIENCEDETAILS,
   SERVICE_EXP_QUERY,
   SERVICE_PROCESS,
   STRAPI_RELATED_SERVICES,
   VERTICAL_SLIDER,
+  VIDEOBANNER,
+  VISUALUX,
 } from "@/Configurations/CommonQuery";
 import SEOData from "@/Components/SEO/SEOData";
 import { SEO } from "@/Configurations/SEOQuery";
@@ -23,12 +25,20 @@ import StrapiRelatedServices from "@/Components/Services/StrapiRelatedServices";
 import LatestNews from "@/Components/LatestNews/LatestNews";
 import ContactForm from "../contact-us/Components/ContactForm";
 import ServiceProcess from "@/Components/Services/ServiceProcess";
+import ServiceDetailsEx from "@/Components/ServicesDetailsComponents/ServiceDetailsEX";
+import VideoBanner from "@/Components/VideoComponent/VideoBanner";
+import ServicesVisualUx from "@/Components/services-visual-ux/ServicesVisualUx";
 
 export default function UserExperince() {
   const pathname = usePathname();
   return (
     <>
-      {/* <SEOData name={pathname} query={SEO("kontentAiDevelopmentService")} /> */}
+      <SEOData name={pathname} query={SEO("userExperience")} />
+      <VideoBanner name={pathname} query={VIDEOBANNER("userExperience")} />
+      <ServiceDetailsEx
+        name={pathname}
+        query={SERVICEEXPERIENCEDETAILS("userExperience")}
+      />
       <SliderVertical
         name={pathname}
         query={VERTICAL_SLIDER("userExperience")}
@@ -43,6 +53,7 @@ export default function UserExperince() {
         query={SERVICE_PROCESS("userExperience")}
       />
       <Email name={pathname} query={FORM_TITLE_QUERY("userExperience")} />
+      <ServicesVisualUx name={pathname} query={VISUALUX("userExperience")} />
       <FAQS name={pathname} query={FAQ("userExperience")} />
       <StrapiRelatedServices
         name={pathname}

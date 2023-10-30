@@ -1252,3 +1252,183 @@ query{
   }
 }
 `;
+
+export const SERVICEEXPERIENCEDETAILS = (parameter) => `
+query{
+ ${parameter}{
+    data{
+      id
+      attributes{
+        services_detail_experience{
+          data{
+            id
+            attributes{
+              MainTitle{
+                id
+                Title
+                Description
+              }
+              Description{
+                id
+                Title
+                Description
+              }
+              Images{
+                id
+                class
+                Image{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+export const VIDEOBANNER = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        video_banner{
+          data{
+            id
+            attributes{
+              VideoMain{
+                id
+                TitleImage{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+               VideoUrl
+                MainLink{
+                  id
+                  href
+                  label
+                }
+                Description
+              }
+              VideoLeft{
+                id
+                Title
+                Description
+                TagImage{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+                Link{
+                  id
+                  href
+                  label
+                }
+                Number
+                Text
+              }
+              VideoRight{
+                id
+                Title
+                Date
+                Link{
+                  id
+                  href
+                  label
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+export const VISUALUX = (parameter) => `
+query{
+  ${parameter}{
+    data{
+      id
+      attributes{
+        visual_ux{
+          data{
+            id
+            attributes{
+              strapi_title{
+                data{
+                  id
+                  attributes{
+                    StrapiTitle{
+                      id
+                      Title
+                      Description
+                    }
+                  }
+                }
+              }
+              TabImage{
+                id
+                ImageDesktop{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+                ImageMobile{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+              AllImg{
+                id
+                Images{
+                  data{
+                    id
+                    attributes{
+                      alternativeText
+                      url
+                    }
+                  }
+                }
+              }
+              Links{
+                id
+                href
+                label
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;

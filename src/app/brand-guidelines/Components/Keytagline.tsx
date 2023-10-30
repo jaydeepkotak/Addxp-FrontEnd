@@ -28,38 +28,46 @@ export default function Keytagline(props: any) {
   }, []);
   return (
     <section className='brand-two-coloum'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-6'>
-            <div className='brand-left'>
-              <h5>{userDetails?.data.attributes.key_tagline.data.attributes.MainTitle}</h5>
-              <ul>
-                {userDetails?.data.attributes.key_tagline.data.attributes.Subtagline.map((item: any) => (
-                  <li key={item.id}>
-                    {item.Number <= 9 ? (
-                      <span className='number'>0{item.Number}</span>
-                    ) : (
-                      <span className='number'>0{item.Number}</span>
-                    )}
+      {userDetails?.data.attributes.key_tagline.data == null ? null : (
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-6'>
+              <div className='brand-left'>
+                {userDetails?.data.attributes.key_tagline.data.attributes.MainTitle == null ? null : (
+                  <h5>{userDetails?.data.attributes.key_tagline.data.attributes.MainTitle}</h5>
+                )}
 
-                    <span>{item.Title}</span>
-                  </li>
-                ))}
-              </ul>
+                <ul>
+                  {userDetails?.data.attributes.key_tagline.data.attributes.Subtagline.map((item: any) => (
+                    <li key={item.id}>
+                      {item.Number <= 9 ? (
+                        <span className='number'>0{item.Number}</span>
+                      ) : (
+                        <span className='number'>0{item.Number}</span>
+                      )}
+
+                      <span>{item.Title}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-          <div className='col-md-6'>
-            <div className='brand-right'>
-              <img
-                src={
-                  strapi.strapihost + userDetails?.data.attributes.key_tagline.data.attributes.Image.data.attributes.url
-                }
-                alt={userDetails?.data.attributes.key_tagline.data.attributes.Image.data.attributes.alternativeText}
-              />
+            <div className='col-md-6'>
+              {userDetails?.data.attributes.key_tagline.data.attributes.Image.data == null ? null : (
+                <div className='brand-right'>
+                  <img
+                    src={
+                      strapi.strapihost +
+                      userDetails?.data.attributes.key_tagline.data.attributes.Image.data.attributes.url
+                    }
+                    alt={userDetails?.data.attributes.key_tagline.data.attributes.Image.data.attributes.alternativeText}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

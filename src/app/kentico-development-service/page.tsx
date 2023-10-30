@@ -28,36 +28,15 @@ export default function KenticoCMS() {
   return (
     <>
       <SEOData name={pathname} query={SEO("kenticoDevelopmentService")} />
-      <Banner
-        name={pathname}
-        query={BANNER_QUERY("kenticoDevelopmentService")}
-      />
-      <ServiceTitle
-        name={pathname}
-        query={TITIE_QUERY("kenticoDevelopmentService")}
-      />
-      <OurServices
-        name={pathname}
-        query={OUR_SERVICES_QUERY("kenticoDevelopmentService")}
-      />
+      <Banner name={pathname} query={BANNER_QUERY("kenticoDevelopmentService")} />
+      <ServiceTitle name={pathname} query={TITIE_QUERY("kenticoDevelopmentService")} />
+      <OurServices name={pathname} query={OUR_SERVICES_QUERY("kenticoDevelopmentService")} />
       <CTA name={pathname} query={CTA_QUERY("kenticoDevelopmentService")} />
-      <ServiceExperience
-        name={pathname}
-        query={SERVICE_EXP_QUERY("kenticoDevelopmentService")}
-      />
-      <ServicesDetails
-        name={pathname}
-        query={SERVICES_DETILS_QUERY("kenticoDevelopmentService")}
-      />
+      <ServiceExperience name={pathname} query={SERVICE_EXP_QUERY("kenticoDevelopmentService")} />
+      <ServicesDetails name={pathname} query={SERVICES_DETILS_QUERY("kenticoDevelopmentService")} />
       <FAQS name={pathname} query={FAQ("kenticoDevelopmentService")} />
-      <LatestNews
-        name={pathname}
-        query={LATEST_NEWS("kenticoDevelopmentService")}
-      />
-      <ContactForm
-        name={pathname}
-        query={CONTACT_FORM_TITLE_QUERY("kenticoDevelopmentService")}
-      />
+      <LatestNews name={pathname} query={LATEST_NEWS("kenticoDevelopmentService")} />
+      <ContactForm name={pathname} query={CONTACT_FORM_TITLE_QUERY("kenticoDevelopmentService")} />
     </>
   );
 }
