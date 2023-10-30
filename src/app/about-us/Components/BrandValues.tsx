@@ -9,7 +9,7 @@ export default function BrandValues() {
   const [userDetails, setUserDetails] = useState<UserData>();
   const config: AxiosRequestConfig = {
     method: "POST",
-    url: strapi.strapigraphql,
+    url: process.env.GRAPGQL,
     headers: {
       "Content-Type": "application/json",
       // 'Content-Type': 'application/x-www-form-urlencoded',
