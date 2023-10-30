@@ -1,4 +1,4 @@
 {
-  "strapihost": "http://ec2-3-21-188-215.us-east-2.compute.amazonaws.com:80",
-  "strapigraphql": "http://ec2-3-21-188-215.us-east-2.compute.amazonaws.com:80/graphql"
+  "strapihost": "http://ec2-3-21-188-215.us-east-2.compute.amazonaws.com",
+  "strapigraphql": "http://ec2-3-21-188-215.us-east-2.compute.amazonaws.com/graphql"
 }
