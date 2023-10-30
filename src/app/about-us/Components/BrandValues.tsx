@@ -10,6 +10,10 @@ export default function BrandValues() {
   const config: AxiosRequestConfig = {
     method: "POST",
     url: strapi.strapigraphql,
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
 
     data: {
       query: BRAND_VALUES,
